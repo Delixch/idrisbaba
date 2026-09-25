@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <radialGradient id="heroBg" cx="65%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#d4a24c" stop-opacity="0.95"/>
+      <stop offset="28%" stop-color="#b07d32" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#5a3d25" stop-opacity="0.95"/>
+      <stop offset="85%" stop-color="#241a14" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#19120d" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="strandGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf4d6" stop-opacity="0.8"/>
+      <stop offset="35%" stop-color="#e8be6a" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#c98a3c" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#6e4624" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="amberDroplet" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#fff5cc"/>
+      <stop offset="50%" stop-color="#e5ab46"/>
+      <stop offset="100%" stop-color="#8a531a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Warm Base -->
+  <rect width="1200" height="900" fill="url(#heroBg)"/>
+
+  <!-- Organic Hair Wave Flow Curves -->
+  <path d="M 0,0 Q 300,200 250,550 T 400,900 L 0,900 Z" fill="#20150e" opacity="0.6"/>
+  <path d="M 1200,0 Q 900,180 850,500 T 950,900 L 1200,900 Z" fill="#1b120c" opacity="0.5"/>
+
+  <!-- Fluid Flowing Hair Strands (Balayage Texture) -->
+  <g stroke="url(#strandGlow)" fill="none" opacity="0.45" stroke-linecap="round">
+    <path d="M 150,-50 C 350,150 200,450 380,950" stroke-width="24"/>
+    <path d="M 220,-80 C 420,180 280,480 460,950" stroke-width="14"/>
+    <path d="M 310,-40 C 500,220 380,520 540,950" stroke-width="18"/>
+    <path d="M 400,-60 C 580,240 450,580 620,950" stroke-width="28"/>
+    <path d="M 480,-30 C 650,260 520,600 680,950" stroke-width="12"/>
+    <path d="M 580,-50 C 720,280 610,640 760,950" stroke-width="22"/>
+    <path d="M 680,-40 C 810,300 700,660 840,950" stroke-width="32"/>
+    <path d="M 770,-70 C 890,290 800,680 920,950" stroke-width="16"/>
+    <path d="M 860,-50 C 970,320 890,700 990,950" stroke-width="26"/>
+    <path d="M 940,-60 C 1050,330 960,710 1060,950" stroke-width="14"/>
+  </g>
+
+  <!-- Fine golden highlighted micro-strands -->
+  <g stroke="#fae3a0" fill="none" opacity="0.55" stroke-linecap="round">
+    <path d="M 330,-20 C 490,210 390,510 520,950" stroke-width="4"/>
+    <path d="M 420,-10 C 590,230 470,550 600,950" stroke-width="5"/>
+    <path d="M 520,-30 C 680,270 560,590 710,950" stroke-width="4"/>
+    <path d="M 630,-15 C 770,290 660,630 800,950" stroke-width="6"/>
+    <path d="M 740,-25 C 870,310 760,670 890,950" stroke-width="5"/>
+    <path d="M 820,-10 C 940,320 840,690 950,950" stroke-width="3"/>
+  </g>
+
+  <!-- Ambient light orb at top right -->
+  <circle cx="820" cy="220" r="280" fill="url(#amberDroplet)" opacity="0.22" filter="blur(60px)"/>
+  <circle cx="380" cy="340" r="190" fill="#fdf4d6" opacity="0.12" filter="blur(50px)"/>
+
+  <!-- Subtle watermark monogram -->
+  <text x="1120" y="850" text-anchor="end" font-family="'Source Serif 4', Georgia, serif" font-size="52" fill="#e8be6a" opacity="0.25" font-style="italic">Revair Studio</text>
+</svg>
