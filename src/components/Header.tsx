@@ -44,7 +44,7 @@ export const Header: React.FC = () => {
 
           {/* Text Area */}
           <div className="flex flex-col relative z-10 pr-2">
-            <span className="font-sans font-extrabold text-sm sm:text-base tracking-[0.18em] uppercase leading-tight gold-shimmer-text">
+            <span className="font-sans font-extrabold text-sm sm:text-base tracking-[0.18em] uppercase leading-tight whitespace-nowrap gold-shimmer-text">
               {SALON_CONFIG.shortName}
             </span>
             <div className="flex items-center gap-1.5 mt-0.5">
@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
         </Link>
 
         {/* Zone 2: Navigation Links (UPPERCASE) */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.to}
@@ -116,7 +116,7 @@ export const Header: React.FC = () => {
           {/* Mobile Menu Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[#fbbf24] bg-[#241e19] hover:bg-[#342a22] border border-[#d4a24c]/40 rounded-xl transition-colors focus-visible:outline-none"
+            className="lg:hidden p-2 text-[#fbbf24] bg-[#241e19] hover:bg-[#342a22] border border-[#d4a24c]/40 rounded-xl transition-colors focus-visible:outline-none"
             aria-label="Menü"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -126,7 +126,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Drawer (Redesigned Dark Luxury Lounge Style) */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#16120f]/98 backdrop-blur-xl border-b border-[#d4a24c]/30 px-5 pt-4 pb-6 space-y-3 animate-in fade-in slide-in-from-top-3 shadow-2xl">
+        <div className="lg:hidden bg-[#16120f]/98 backdrop-blur-xl border-b border-[#d4a24c]/30 px-5 pt-4 pb-6 space-y-3 animate-in fade-in slide-in-from-top-3 shadow-2xl">
           <div className="space-y-1">
             {navLinks.map((link) => (
               <Link

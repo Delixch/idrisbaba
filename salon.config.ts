@@ -37,7 +37,8 @@ export const SALON_CONFIG = {
     phone: "", // Gizli tutuldu (kullanıcı talebi)
     phoneDisplay: "", // Telefon sitede görünmeyecek
     email: "adnan.aydin@bluewin.ch",
-    googleAppointmentUrl: "https://calendar.app.google/9y49yDQBuvTrT39WA",
+    googleAppointmentUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1PxGQPNxIIrutu6YLa15bdTFwQcU2l4NpFZyn5W9u5fTCCu2YZiNOrf0PI9HSngFIRQ4Vn-QtV",
+    googleAppointmentEmbedUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1PxGQPNxIIrutu6YLa15bdTFwQcU2l4NpFZyn5W9u5fTCCu2YZiNOrf0PI9HSngFIRQ4Vn-QtV?gv=true",
     instagram: "idris.coiffure",
     instagramUrl: "https://instagram.com",
   },

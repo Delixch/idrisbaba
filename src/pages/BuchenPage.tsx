@@ -446,35 +446,6 @@ export const BuchenPage: React.FC = () => {
           {step === 1 && (
             <div className="space-y-8 animate-in fade-in duration-200">
               
-              {/* Google Calendar Direct Scheduling Option */}
-              {SALON_CONFIG.contact.googleAppointmentUrl && (
-                <div className="bg-[#121c2e] border border-[#2563eb]/40 rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-2xl bg-[#2563eb] text-white flex items-center justify-center shrink-0 shadow-md">
-                      <CalendarIcon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-sm sm:text-base font-semibold text-[#93c5fd]">
-                        {language === 'de' ? 'Bevorzugen Sie die direkte Google Kalender Buchung?' : 'Google Takvim ile doğrudan randevu almak ister misiniz?'}
-                      </h3>
-                      <p className="text-xs text-[#60a5fa]">
-                        {language === 'de'
-                          ? 'Wählen Sie einen freien Slot direkt über unsere offizielle Google Appointments Seite.'
-                          : 'Resmi Google Randevu sayfamız üzerinden müsait saatleri anında görüntüleyin ve randevu oluşturun.'}
-                      </p>
-                    </div>
-                  </div>
-                  <a
-                    href={SALON_CONFIG.contact.googleAppointmentUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-xs font-semibold shadow-md transition-colors shrink-0"
-                  >
-                    <span>{language === 'de' ? 'Zu Google Appointments →' : 'Google Randevu Sayfası →'}</span>
-                  </a>
-                </div>
-              )}
-
               {/* Service Selection Cards */}
               <div className="bg-[#16120f] border border-[#2d2621] rounded-3xl p-6 sm:p-8 shadow-xl">
                 <h2 className="font-serif text-xl sm:text-2xl font-semibold text-[#f7f3ec] mb-2">
@@ -687,7 +658,59 @@ export const BuchenPage: React.FC = () => {
           {/* ==================================================== */}
           {/* STEP 2: TERMIN (DATUM & UHRZEIT) */}
           {/* ==================================================== */}
-          {step === 2 && (
+          {step === 2 && SALON_CONFIG.contact.googleAppointmentEmbedUrl && (
+            <div className="space-y-8 animate-in fade-in duration-200">
+              {/* On phones the card chrome is dropped so the calendar gets the full screen width */}
+              <div className="sm:bg-[#16120f] sm:border sm:border-[#2d2621] sm:rounded-3xl sm:p-8 sm:shadow-lg">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-2xl bg-[#d4a24c] text-[#12100e] flex items-center justify-center shrink-0 shadow-md">
+                      <CalendarIcon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-xl sm:text-2xl font-semibold text-[#f7f3ec]">
+                        {t.booking.selectTime}
+                      </h2>
+                      <p className="text-xs text-[#9e9486]">
+                        {language === 'de'
+                          ? `${selectedService.nameDe} (${selectedService.durationMinutes} Min) – wählen Sie einen freien Slot, die Bestätigung kommt sofort per E-Mail.`
+                          : `${selectedService.nameTr} (${selectedService.durationMinutes} dk) – müsait bir saat seçin, onay anında e-postanıza gelir.`}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setStep(1)}
+                    className="text-xs text-[#9e9486] hover:text-[#f7f3ec] flex items-center gap-1 shrink-0"
+                  >
+                    <ArrowLeft className="w-3.5 h-3.5" />
+                    <span>{language === 'de' ? 'Zurück' : 'Geri'}</span>
+                  </button>
+                </div>
+                {/* Cross-origin iframe: its CSS can't be styled, so a filter recolours the whole frame
+                    (invert turns the white page dark and Google's blue into a honey tone). */}
+                <div className="-mx-4 sm:mx-0 overflow-hidden bg-[#161616] border-y sm:border border-[#2d2621] sm:rounded-2xl">
+                  <iframe
+                    src={SALON_CONFIG.contact.googleAppointmentEmbedUrl}
+                    title={language === 'de' ? 'Google Kalender Terminbuchung' : 'Google Takvim randevu'}
+                    className="block w-full border-0 h-[1180px] sm:h-[720px] lg:h-[660px]"
+                    style={{ filter: 'invert(0.91) sepia(0.18) saturate(1.3)', colorScheme: 'light' }}
+                  />
+                </div>
+                <div className="mt-5 flex justify-end">
+                  <a
+                    href={SALON_CONFIG.contact.googleAppointmentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-[#9e9486] hover:text-[#d4a24c] transition-colors"
+                  >
+                    {language === 'de' ? 'Kalender in neuem Tab öffnen ↗' : 'Takvimi yeni sekmede aç ↗'}
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {step === 2 && !SALON_CONFIG.contact.googleAppointmentEmbedUrl && (
             <div className="space-y-8 animate-in fade-in duration-200">
               <div className="bg-[#fbf8f2] border border-[#e4dacb] rounded-3xl p-6 sm:p-8 shadow-xs">
                 

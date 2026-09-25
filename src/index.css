@@ -272,3 +272,16 @@
 
 
 
+
+/* Floating story teaser: gentle back-and-forth sway */
+@keyframes storySway {
+  0% { transform: translateX(-8px) rotate(-2.5deg); }
+  100% { transform: translateX(8px) rotate(2.5deg); }
+}
+.story-sway {
+  animation: storySway 2.6s ease-in-out infinite alternate;
+  transform-origin: 50% 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-sway { animation: none; }
+}
