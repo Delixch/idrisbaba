@@ -101,13 +101,16 @@ if (hasLiveSmtp) {
     mailTransporter = nodemailer.createTransport({
       host: SMTP_HOST,
       port: SMTP_PORT,
-      secure: SMTP_PORT === 465,
+      secure: SMTP_PORT === 465, // SSL on 465
       auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
-    console.log('[SMTP] Transporter configured.');
+    console.log('[SMTP] Transporter configured for:', SMTP_USER);
   } catch (err: any) {
     console.error('[SMTP] Setup error:', err.message);
   }

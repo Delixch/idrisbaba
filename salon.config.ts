@@ -34,7 +34,8 @@ export const SALON_CONFIG = {
   contact: {
     phone: "+41 44 211 48 90",
     phoneDisplay: "+41 44 211 48 90",
-    email: "kontakt@revair-studio.ch",
+    email: "adnan.aydin@bluewin.ch",
+    googleAppointmentUrl: "https://calendar.app.google/9y49yDQBuvTrT39WA",
     instagram: "revair.zurich",
     instagramUrl: "https://instagram.com/revair.zurich",
   },

@@ -104,7 +104,24 @@ export const Footer: React.FC = () => {
                   {SALON_CONFIG.contact.phoneDisplay}
                 </a>
               </div>
-              <div className="pt-2">
+              <div className="flex items-center gap-2 text-xs">
+                <span className="text-[#d4a24c]">✉</span>
+                <a href={`mailto:${SALON_CONFIG.contact.email}`} className="hover:text-[#f1e6c0] break-all">
+                  {SALON_CONFIG.contact.email}
+                </a>
+              </div>
+              <div className="pt-2 flex flex-wrap gap-2">
+                {SALON_CONFIG.contact.googleAppointmentUrl && (
+                  <a
+                    href={SALON_CONFIG.contact.googleAppointmentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#4285F4]/20 hover:bg-[#4285F4]/30 text-xs text-[#93c5fd] border border-[#4285F4]/40 transition-colors"
+                  >
+                    <span>Google Terminbuchung</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                )}
                 <a
                   href={SALON_CONFIG.contact.instagramUrl}
                   target="_blank"

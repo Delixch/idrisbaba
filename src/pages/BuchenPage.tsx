@@ -446,6 +446,35 @@ export const BuchenPage: React.FC = () => {
           {step === 1 && (
             <div className="space-y-8 animate-in fade-in duration-200">
               
+              {/* Google Calendar Direct Scheduling Option */}
+              {SALON_CONFIG.contact.googleAppointmentUrl && (
+                <div className="bg-[#f0f6ff] border border-[#bfdbfe] rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-2xl bg-[#2563eb] text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <CalendarIcon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-sm sm:text-base font-semibold text-[#1e3a8a]">
+                        {language === 'de' ? 'Bevorzugen Sie die direkte Google Kalender Buchung?' : 'Google Takvim ile doğrudan randevu almak ister misiniz?'}
+                      </h3>
+                      <p className="text-xs text-[#3b82f6]">
+                        {language === 'de'
+                          ? 'Wählen Sie einen freien Slot direkt über unsere offizielle Google Appointments Seite.'
+                          : 'Resmi Google Randevu sayfamız üzerinden müsait saatleri anında görüntüleyin ve randevu oluşturun.'}
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href={SALON_CONFIG.contact.googleAppointmentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-xs font-semibold shadow-xs transition-colors shrink-0"
+                  >
+                    <span>{language === 'de' ? 'Zu Google Appointments →' : 'Google Randevu Sayfası →'}</span>
+                  </a>
+                </div>
+              )}
+
               {/* Service Selection Cards */}
               <div className="bg-[#fbf8f2] border border-[#e4dacb] rounded-3xl p-6 sm:p-8 shadow-xs">
                 <h2 className="font-serif text-xl sm:text-2xl font-semibold text-[#2e231c] mb-2">
