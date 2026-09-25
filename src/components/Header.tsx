@@ -56,21 +56,21 @@ export const Header: React.FC = () => {
           </div>
         </Link>
 
-        {/* Zone 2: Navigation Links */}
+        {/* Zone 2: Navigation Links (UPPERCASE) */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm tracking-wide transition-colors relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a24c]/40 rounded-sm ${
+              className={`text-xs uppercase tracking-[0.18em] font-semibold transition-colors relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a24c]/40 rounded-sm ${
                 isActive(link.to)
-                  ? 'text-[#fbbf24] font-semibold'
+                  ? 'text-[#fbbf24]'
                   : 'text-[#d4ccc0] hover:text-[#fbbf24]'
               }`}
             >
               {link.label}
               {isActive(link.to) && (
-                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#fbbf24] rounded-full shadow-[0_0_8px_#fbbf24]" />
+                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#fbbf24] rounded-full shadow-[0_0_10px_#fbbf24]" />
               )}
             </Link>
           ))}
@@ -80,12 +80,12 @@ export const Header: React.FC = () => {
         <div className="flex items-center gap-3 sm:gap-4">
           
           {/* Language Switcher Pill Toggle */}
-          <div className="flex items-center p-0.5 bg-[#241e19] rounded-full border border-[#3d342c] text-xs font-medium">
+          <div className="flex items-center p-0.5 bg-[#241e19] rounded-full border border-[#3d342c] text-xs font-semibold">
             <button
               onClick={() => setLanguage('de')}
               className={`px-2.5 py-1 rounded-full transition-all focus-visible:outline-none ${
                 language === 'de'
-                  ? 'bg-[#d4a24c] text-[#12100e] font-bold shadow-xs'
+                  ? 'bg-gradient-to-r from-[#fbbf24] to-[#d4a24c] text-[#12100e] font-bold shadow-xs'
                   : 'text-[#9e9486] hover:text-[#f7f3ec]'
               }`}
               title="Deutsch"
@@ -96,8 +96,8 @@ export const Header: React.FC = () => {
               onClick={() => setLanguage('tr')}
               className={`px-2.5 py-1 rounded-full transition-all focus-visible:outline-none ${
                 language === 'tr'
-                  ? 'bg-[#2e231c] text-[#f4efe6] shadow-xs'
-                  : 'text-[#736c62] hover:text-[#211f1c]'
+                  ? 'bg-gradient-to-r from-[#fbbf24] to-[#d4a24c] text-[#12100e] font-bold shadow-xs'
+                  : 'text-[#9e9486] hover:text-[#f7f3ec]'
               }`}
               title="Türkçe"
             >
@@ -108,7 +108,7 @@ export const Header: React.FC = () => {
           {/* Primary CTA Button */}
           <Link
             to="/buchen"
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-white bg-[#c96442] hover:bg-[#a94f32] rounded-full shadow-xs transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442]/50 whitespace-nowrap"
+            className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs uppercase tracking-wider font-bold text-[#12100e] bg-gradient-to-r from-[#fbbf24] to-[#d4a24c] hover:from-[#f59e0b] hover:to-[#b45309] rounded-full shadow-lg shadow-amber-500/20 transition-all active:scale-95 focus-visible:outline-none whitespace-nowrap"
           >
             {t.nav.buchen}
           </Link>
@@ -116,7 +116,7 @@ export const Header: React.FC = () => {
           {/* Mobile Menu Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[#2e231c] hover:bg-[#efe8dc] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442]/40"
+            className="md:hidden p-2 text-[#fbbf24] bg-[#241e19] hover:bg-[#342a22] border border-[#d4a24c]/40 rounded-xl transition-colors focus-visible:outline-none"
             aria-label="Menü"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -124,28 +124,31 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (Redesigned Dark Luxury Lounge Style) */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#fbf8f2] border-b border-[#e4dacb] px-4 pt-3 pb-5 space-y-2 animate-in fade-in slide-in-from-top-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                isActive(link.to)
-                  ? 'bg-[#efe8dc] text-[#2e231c] font-semibold'
-                  : 'text-[#45413b] hover:bg-[#efe8dc]/50'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <div className="pt-2">
+        <div className="md:hidden bg-[#16120f]/98 backdrop-blur-xl border-b border-[#d4a24c]/30 px-5 pt-4 pb-6 space-y-3 animate-in fade-in slide-in-from-top-3 shadow-2xl">
+          <div className="space-y-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-xl text-xs uppercase tracking-[0.16em] font-semibold transition-all ${
+                  isActive(link.to)
+                    ? 'bg-[#241e19] text-[#fbbf24] border border-[#fbbf24]/40 shadow-sm'
+                    : 'text-[#d4ccc0] hover:bg-[#241e19]/60 hover:text-[#fbbf24]'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="pt-2 border-t border-[#2d2621]">
             <Link
               to="/buchen"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center py-2.5 text-xs font-semibold text-white bg-[#c96442] hover:bg-[#a94f32] rounded-xl shadow-xs transition-all"
+              className="w-full flex items-center justify-center py-3 text-xs uppercase tracking-wider font-bold text-[#12100e] bg-gradient-to-r from-[#fbbf24] to-[#d4a24c] hover:from-[#f59e0b] hover:to-[#b45309] rounded-xl shadow-lg transition-all"
             >
               {t.nav.buchen}
             </Link>

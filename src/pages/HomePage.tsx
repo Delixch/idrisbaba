@@ -157,7 +157,7 @@ export const HomePage: React.FC = () => {
         {/* CARD 2: 1x1 "Nächster freier Termin" Card (Live Calendar Check) */}
         <div
           onClick={handleNextSlotClick}
-          className="col-span-1 p-6 luxury-glow-card shimmer-hover cursor-pointer flex flex-col justify-between group overflow-hidden bg-[#16120f]"
+          className="col-span-1 p-6 luxury-glow-card beam-step-1 shimmer-hover cursor-pointer flex flex-col justify-between group overflow-hidden bg-[#16120f]"
         >
           <div className="absolute top-0 right-0 w-24 h-24 bg-[#4ade80]/5 rounded-bl-full pointer-events-none" />
           <div className="relative z-10">
@@ -195,7 +195,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 3: 1x1 Typewriter Dark Gold Text Card */}
-        <div className="col-span-1 p-6 bg-[#1a140f] luxury-glow-card shimmer-hover flex flex-col justify-between shadow-lg">
+        <div className="col-span-1 p-6 bg-[#1a140f] luxury-glow-card beam-step-2 shimmer-hover flex flex-col justify-between shadow-lg">
           <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#d4a24c]">
             Philosophy
           </span>
@@ -208,7 +208,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 4: 1x1 Cancellation Rule Note Card */}
-        <div className="col-span-1 p-6 bg-[#211612] border border-[#d97746]/40 luxury-glow-card flex flex-col justify-between">
+        <div className="col-span-1 p-6 bg-[#211612] border border-[#d97746]/40 luxury-glow-card beam-step-3 flex flex-col justify-between">
           <div className="flex items-center gap-2 text-[#d97746] mb-2">
             <ShieldAlert className="w-4 h-4 shrink-0" />
             <span className="text-xs font-semibold uppercase tracking-wider font-typewriter">
@@ -224,7 +224,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 5: 1x1 Opening Hours Card with Live Status Badge */}
-        <div className="col-span-1 p-6 luxury-glow-card flex flex-col justify-between bg-[#16120f]">
+        <div className="col-span-1 p-6 luxury-glow-card beam-step-4 flex flex-col justify-between bg-[#16120f]">
           <div>
             <div className="flex items-center justify-between mb-3">
               <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#9e9486]">

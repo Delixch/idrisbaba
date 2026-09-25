@@ -71,10 +71,10 @@
   background: conic-gradient(
     from var(--border-angle),
     transparent 15%,
-    rgba(212, 162, 76, 0.2) 35%,
+    rgba(212, 162, 76, 0.25) 35%,
     #fbbf24 50%,
     #d97746 58%,
-    rgba(212, 162, 76, 0.2) 68%,
+    rgba(212, 162, 76, 0.25) 68%,
     transparent 85%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -82,10 +82,31 @@
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   pointer-events: none;
-  opacity: 0.65;
+  opacity: 0.75;
   transition: opacity 0.4s ease;
-  animation: borderRotate 5s linear infinite;
+  animation: borderRotate 6s linear infinite;
   z-index: 1;
+}
+
+/* Fluid Wall Sequence: Staggered Wave Between the 4 Bento Cards */
+.beam-step-1::before {
+  animation: borderRotate 6s linear infinite;
+  animation-delay: 0s;
+}
+
+.beam-step-2::before {
+  animation: borderRotate 6s linear infinite;
+  animation-delay: -1.5s;
+}
+
+.beam-step-3::before {
+  animation: borderRotate 6s linear infinite;
+  animation-delay: -3.0s;
+}
+
+.beam-step-4::before {
+  animation: borderRotate 6s linear infinite;
+  animation-delay: -4.5s;
 }
 
 .luxury-glow-card:hover {
@@ -96,7 +117,7 @@
 
 .luxury-glow-card:hover::before {
   opacity: 1;
-  animation: borderRotate 2.8s linear infinite;
+  animation-duration: 2.8s;
 }
 
 /* Subtle Shimmer Sweep on Hover */
