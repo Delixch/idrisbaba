@@ -149,8 +149,76 @@
   }
 }
 
-.live-pulse {
-  animation: pulseGlow 2s infinite ease-in-out;
+/* Golden Heartbeat Pulse & Header Aura */
+@keyframes goldHeartbeat {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.35;
+    filter: blur(14px);
+  }
+  15% {
+    transform: scale(1.15);
+    opacity: 0.85;
+    filter: blur(20px);
+  }
+  30% {
+    transform: scale(1.02);
+    opacity: 0.5;
+    filter: blur(16px);
+  }
+  45% {
+    transform: scale(1.22);
+    opacity: 1;
+    filter: blur(24px);
+  }
+  70%, 100% {
+    transform: scale(0.96);
+    opacity: 0.35;
+    filter: blur(14px);
+  }
 }
+
+.gold-heartbeat-glow {
+  animation: goldHeartbeat 3s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes goldTextShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #fef3c7 0%,
+    #fbbf24 25%,
+    #ffffff 50%,
+    #fbbf24 75%,
+    #fef3c7 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldTextShimmer 4s linear infinite;
+}
+
+/* Subtle background luxury ambient spot */
+.ambient-gold-spot {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(212, 162, 76, 0.08) 0%, rgba(212, 162, 76, 0.02) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 
 

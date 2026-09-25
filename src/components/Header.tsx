@@ -25,18 +25,34 @@ export const Header: React.FC = () => {
     <header className="sticky top-0 z-40 w-full bg-[#16120f]/90 backdrop-blur-md border-b border-[#2d2621] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Zone 1: Brand Wordmark */}
-        <Link to="/" className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a24c]/40 rounded-lg p-1">
-          <div className="w-10 h-10 rounded-full bg-[#241e19] flex items-center justify-center text-[#d4a24c] font-serif text-xl font-bold shadow-md transition-transform group-hover:scale-105 border border-[#d4a24c]/60">
-            I
+        {/* Zone 1: Brand Wordmark with Golden Heartbeat Aura */}
+        <Link to="/" className="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a24c]/40 rounded-2xl p-1.5 relative">
+          {/* Golden Heartbeat Pulse Aura in the background */}
+          <div className="absolute -inset-1.5 bg-gradient-to-r from-[#fbbf24]/30 via-[#d97746]/35 to-[#fbbf24]/30 rounded-2xl gold-heartbeat-glow pointer-events-none" />
+          
+          {/* Subtle Golden Outline Pill */}
+          <div className="absolute inset-0 bg-[#241e19]/90 border border-[#fbbf24]/50 rounded-2xl backdrop-blur-md shadow-[0_0_20px_rgba(251,191,36,0.25)] transition-all duration-300 group-hover:border-[#fbbf24] group-hover:shadow-[0_0_25px_rgba(251,191,36,0.45)]" />
+
+          {/* Monogram Badge */}
+          <div className="relative z-10 w-10 h-10 rounded-xl bg-gradient-to-br from-[#fbbf24] to-[#b45309] p-[1.5px] shadow-lg transition-transform duration-300 group-hover:scale-105">
+            <div className="w-full h-full rounded-[10px] bg-[#16120f] flex items-center justify-center">
+              <span className="font-serif text-xl font-bold gold-shimmer-text">
+                I
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span className="font-sans font-bold text-base sm:text-lg tracking-[0.16em] text-[#f7f3ec] uppercase leading-tight">
+
+          {/* Text Area */}
+          <div className="flex flex-col relative z-10 pr-2">
+            <span className="font-sans font-extrabold text-sm sm:text-base tracking-[0.18em] uppercase leading-tight gold-shimmer-text">
               {SALON_CONFIG.shortName}
             </span>
-            <span className="text-[10px] uppercase font-typewriter tracking-[0.18em] text-[#d4a24c]">
-              ZÜRICH · 8055
-            </span>
+            <div className="flex items-center gap-1.5 mt-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#fbbf24] shadow-[0_0_6px_#fbbf24] animate-ping" />
+              <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#fbbf24] font-semibold">
+                ZÜRICH · 8055
+              </span>
+            </div>
           </div>
         </Link>
 

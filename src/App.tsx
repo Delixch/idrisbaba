@@ -15,9 +15,11 @@ export default function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
-        <div className="min-h-screen flex flex-col bg-[#f4efe6] text-[#211f1c]">
+        <div className="min-h-screen flex flex-col bg-[#12100e] text-[#f7f3ec] relative selection:bg-[#fbbf24] selection:text-[#12100e]">
+          {/* Ambient Gold Spot Light */}
+          <div className="ambient-gold-spot" />
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 relative z-10">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/arbeiten" element={<ArbeitenPage />} />
