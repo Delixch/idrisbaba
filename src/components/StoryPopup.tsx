@@ -8,6 +8,7 @@ const SEEN_KEY = 'idris_story_seen';
 export const StoryPopup: React.FC = () => {
   const { language } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const boxRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [leaving, setLeaving] = useState(false);
   const [gone, setGone] = useState(() => {
@@ -17,7 +18,7 @@ export const StoryPopup: React.FC = () => {
       return false;
     }
   });
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -25,6 +26,36 @@ export const StoryPopup: React.FC = () => {
     const timer = setTimeout(() => setVisible(true), 1200);
     return () => clearTimeout(timer);
   }, [gone]);
+
+  // Start with sound. Browsers block that until the visitor has interacted with the site,
+  // so fall back to muted playback and unmute on the first tap/click/key anywhere on the page.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!visible || !v) return;
+    v.muted = false;
+    setMuted(false);
+    v.play().catch(() => {
+      v.muted = true;
+      setMuted(true);
+      v.play().catch(() => {});
+    });
+
+    const unmuteOnInteraction = (e: Event) => {
+      if (boxRef.current?.contains(e.target as Node)) return; // the story's own buttons handle themselves
+      if (v.muted) {
+        v.muted = false;
+        setMuted(false);
+      }
+      cleanup();
+    };
+    const cleanup = () => {
+      document.removeEventListener('pointerdown', unmuteOnInteraction);
+      document.removeEventListener('keydown', unmuteOnInteraction);
+    };
+    document.addEventListener('pointerdown', unmuteOnInteraction);
+    document.addEventListener('keydown', unmuteOnInteraction);
+    return cleanup;
+  }, [visible, language]);
 
   const dismiss = () => {
     try {
@@ -48,6 +79,7 @@ export const StoryPopup: React.FC = () => {
 
   return (
     <div
+      ref={boxRef}
       className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 transition-all duration-500 ease-out ${
         visible && !leaving ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-90 pointer-events-none'
       }`}
@@ -59,8 +91,6 @@ export const StoryPopup: React.FC = () => {
             key={language}
             src={`/story/idris_story_${language === 'tr' ? 'tr' : 'de'}.mp4`}
             className="w-full h-full object-cover cursor-pointer"
-            autoPlay
-            muted
             playsInline
             preload="auto"
             onClick={toggleSound}
