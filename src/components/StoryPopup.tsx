@@ -84,7 +84,7 @@ export const StoryPopup: React.FC = () => {
         visible && !leaving ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-90 pointer-events-none'
       }`}
     >
-      <div className="story-sway relative w-[132px] sm:w-[180px] aspect-[9/16] rounded-[22px] p-[3px] bg-[conic-gradient(from_200deg,#e8b860,#c96442,#8a3d6b,#e8b860)] shadow-[0_18px_50px_rgba(0,0,0,0.55)]">
+      <div className="story-sway relative w-[176px] sm:w-[190px] aspect-[9/16] rounded-[22px] p-[3px] bg-[conic-gradient(from_200deg,#e8b860,#c96442,#8a3d6b,#e8b860)] shadow-[0_18px_50px_rgba(0,0,0,0.55)]">
         <div className="relative w-full h-full rounded-[19px] overflow-hidden bg-[#12100e]">
           <video
             ref={videoRef}
