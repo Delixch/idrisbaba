@@ -45,15 +45,15 @@ export const StoryPopup: React.FC = () => {
       if (v.muted) {
         v.muted = false;
         setMuted(false);
+        v.play().catch(() => {});
       }
       cleanup();
     };
-    const cleanup = () => {
-      document.removeEventListener('pointerdown', unmuteOnInteraction);
-      document.removeEventListener('keydown', unmuteOnInteraction);
-    };
-    document.addEventListener('pointerdown', unmuteOnInteraction);
-    document.addEventListener('keydown', unmuteOnInteraction);
+    // Only these events grant "user activation" on touch devices; pointerdown/touchstart do not,
+    // and unmuting without activation gets the video paused or kept silent.
+    const events = ['click', 'touchend', 'keydown'] as const;
+    const cleanup = () => events.forEach((ev) => document.removeEventListener(ev, unmuteOnInteraction));
+    events.forEach((ev) => document.addEventListener(ev, unmuteOnInteraction));
     return cleanup;
   }, [visible, language]);
 
