@@ -29,7 +29,7 @@ export const ImpressumPage: React.FC = () => {
             </h2>
             <p>
               <strong>{SALON_CONFIG.name}</strong><br />
-              Inhaberin: Elena Keller<br />
+              Inhaber: Idris Hacimustafaoglu<br />
               {SALON_CONFIG.address.street}<br />
               {SALON_CONFIG.address.postalCode} {SALON_CONFIG.address.city}<br />
               Schweiz
@@ -41,9 +41,8 @@ export const ImpressumPage: React.FC = () => {
               Kontakt
             </h2>
             <p>
-              Telefon: {SALON_CONFIG.contact.phone}<br />
               E-Mail: {SALON_CONFIG.contact.email}<br />
-              Webseite: https://revair-studio.ch
+              Terminbuchung: Online über Google Appointments &amp; Direktsystem
             </p>
           </section>
 

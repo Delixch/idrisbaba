@@ -104,37 +104,49 @@ export const HomePage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
         
         {/* CARD 1: 2x2 Hero Card */}
-        <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden min-h-[380px] sm:min-h-[440px] border border-[#e4dacb] shadow-xs group">
+        <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden min-h-[420px] sm:min-h-[480px] border border-[#e4dacb] card-hover-luxury group shadow-md">
           {/* Hair Photo Background */}
           <img
-            src="/galeri/hero_hair.svg"
-            alt="Revair Hair Styling"
+            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=85"
+            alt="Idris Hacimustafaoglu Coiffure Haute Coiffure Zürich"
             referrerPolicy="no-referrer"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2e231c]/90 via-[#2e231c]/30 to-transparent" />
           
           {/* Frosted Glass Floating Panel */}
-          <div className="absolute inset-x-4 bottom-4 sm:inset-x-8 sm:bottom-8 p-6 sm:p-8 rounded-2xl bg-[#fbf8f2]/75 backdrop-blur-md border border-[#fbf8f2]/60 shadow-lg">
-            <span className="text-[10px] sm:text-xs uppercase font-typewriter tracking-[0.2em] text-[#736c62] block mb-2">
-              {t.hero.tagline}
-            </span>
-            <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-semibold text-[#2e231c] leading-[1.15] mb-2">
+          <div className="absolute inset-x-4 bottom-4 sm:inset-x-6 sm:bottom-6 p-6 sm:p-8 rounded-2xl bg-[#fbf8f2]/90 backdrop-blur-md border border-[#fbf8f2]/80 shadow-xl">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-2 h-2 rounded-full bg-[#d4a24c]" />
+              <span className="text-[11px] uppercase font-typewriter tracking-[0.25em] text-[#736c62]">
+                Haute Coiffure · Zürich
+              </span>
+            </div>
+            
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2e231c] leading-[1.12] mb-1">
               {SALON_CONFIG.name}
             </h1>
-            <p className="text-sm sm:text-base text-[#45413b] font-sans mb-6 max-w-md">
+
+            {/* Custom Luxury Font Slogan */}
+            <p className="font-editorial text-xl sm:text-2xl text-[#c96442] italic tracking-wide mb-3">
+              "{SALON_CONFIG.sloganEn}"
+            </p>
+
+            <p className="text-xs sm:text-sm text-[#45413b] font-sans mb-6 max-w-lg leading-relaxed">
               {language === 'de' ? SALON_CONFIG.sloganDe : SALON_CONFIG.sloganTr}
             </p>
+
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 to="/buchen"
-                className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold text-white bg-[#c96442] hover:bg-[#a94f32] rounded-full shadow-sm transition-all active:scale-95"
+                className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold text-white bg-[#c96442] hover:bg-[#a94f32] rounded-full shadow-md transition-all active:scale-95"
               >
                 <Calendar className="w-4 h-4" />
                 {t.hero.cta}
               </Link>
               <Link
                 to="/arbeiten"
-                className="inline-flex items-center gap-2 px-5 py-3 text-xs sm:text-sm font-medium text-[#2e231c] bg-[#fbf8f2]/90 hover:bg-[#efe8dc] border border-[#e4dacb] rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3 text-xs sm:text-sm font-medium text-[#2e231c] bg-[#efe8dc] hover:bg-[#e4dacb] border border-[#d3c6b3] rounded-full transition-colors"
               >
                 {t.hero.explore}
               </Link>
@@ -145,15 +157,17 @@ export const HomePage: React.FC = () => {
         {/* CARD 2: 1x1 "Nächster freier Termin" Card (Live Calendar Check) */}
         <div
           onClick={handleNextSlotClick}
-          className="col-span-1 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] hover:border-[#d3c6b3] transition-all hover:shadow-md cursor-pointer flex flex-col justify-between group"
+          className="col-span-1 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] card-hover-luxury cursor-pointer flex flex-col justify-between group relative overflow-hidden"
         >
+          <div className="absolute top-0 right-0 w-24 h-24 bg-[#587a4f]/5 rounded-bl-full pointer-events-none" />
           <div>
             <div className="flex items-center justify-between mb-4">
               <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#736c62]">
                 {t.nextSlot.title}
               </span>
-              <div className="w-8 h-8 rounded-full bg-[#587a4f]/15 flex items-center justify-center text-[#587a4f]">
-                <Clock className="w-4 h-4" />
+              <div className="w-8 h-8 rounded-full bg-[#587a4f]/15 flex items-center justify-center text-[#587a4f] relative">
+                <span className="absolute w-2.5 h-2.5 rounded-full bg-[#587a4f] live-pulse" />
+                <Clock className="w-4 h-4 relative z-10" />
               </div>
             </div>
 
@@ -161,10 +175,11 @@ export const HomePage: React.FC = () => {
               <p className="text-sm text-[#736c62] animate-pulse">{t.nextSlot.loading}</p>
             ) : nextSlot?.nextSlotIso ? (
               <div className="space-y-1">
-                <span className="text-2xl sm:text-3xl font-serif font-bold text-[#2e231c] block">
-                  {nextSlot.timeFormatted} <span className="text-base font-normal text-[#736c62]">Uhr</span>
+                <span className="text-2xl sm:text-3xl font-display font-bold text-[#2e231c] block tracking-tight">
+                  {nextSlot.timeFormatted} <span className="text-sm font-normal font-sans text-[#736c62]">Uhr</span>
                 </span>
-                <span className="text-xs text-[#587a4f] font-medium block">
+                <span className="text-xs text-[#587a4f] font-semibold block flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#587a4f]" />
                   {language === 'de' ? nextSlot.dateFormattedDe : nextSlot.dateFormattedTr}
                 </span>
               </div>
@@ -180,20 +195,20 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 3: 1x1 Typewriter Butter Yellow Text Card */}
-        <div className="col-span-1 rounded-3xl p-6 bg-[#f1e6c0] border border-[#e4dacb] flex flex-col justify-between shadow-xs">
+        <div className="col-span-1 rounded-3xl p-6 bg-[#f1e6c0] border border-[#e4dacb] card-hover-luxury flex flex-col justify-between shadow-xs">
           <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#736c62]">
-            {t.quote1.source}
+            Philosophy
           </span>
-          <blockquote className="font-typewriter text-base sm:text-lg text-[#211f1c] leading-relaxed my-2 italic">
-            "{language === 'de' ? SALON_CONFIG.sloganDe : SALON_CONFIG.sloganTr}"
+          <blockquote className="font-editorial text-lg sm:text-xl text-[#211f1c] leading-snug my-2 italic">
+            "{SALON_CONFIG.sloganEn}"
           </blockquote>
           <span className="text-[11px] font-typewriter text-[#736c62]">
-            Bahnhofstrasse · Zürich
+            Arbenstrasse · 8055 Zürich
           </span>
         </div>
 
         {/* CARD 4: 1x1 Cancellation Rule Note Card */}
-        <div className="col-span-1 rounded-3xl p-6 bg-[#f5e1d5]/50 border border-dashed border-[#c96442]/30 flex flex-col justify-between">
+        <div className="col-span-1 rounded-3xl p-6 bg-[#f5e1d5]/50 border border-dashed border-[#c96442]/40 card-hover-luxury flex flex-col justify-between">
           <div className="flex items-center gap-2 text-[#c96442] mb-2">
             <ShieldAlert className="w-4 h-4 shrink-0" />
             <span className="text-xs font-semibold uppercase tracking-wider font-typewriter">
@@ -209,7 +224,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 5: 1x1 Opening Hours Card with Live Status Badge */}
-        <div className="col-span-1 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] flex flex-col justify-between">
+        <div className="col-span-1 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] card-hover-luxury flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-3">
               <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#736c62]">
@@ -259,32 +274,32 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 6: 2x1 Address & Map Navigation Card */}
-        <div className="md:col-span-2 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+        <div className="md:col-span-2 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] card-hover-luxury flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-[#736c62] text-[11px] uppercase font-typewriter tracking-widest">
               <MapPin className="w-3.5 h-3.5 text-[#d4a24c]" />
               <span>{t.location.title}</span>
             </div>
-            <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#2e231c]">
+            <h3 className="font-display text-2xl font-bold text-[#2e231c]">
               {SALON_CONFIG.address.street}
             </h3>
             <p className="text-xs text-[#736c62]">
-              {SALON_CONFIG.address.postalCode} {SALON_CONFIG.address.city} · {t.location.tram}
+              {SALON_CONFIG.address.postalCode} {SALON_CONFIG.address.city} · Zürich Albisrieden / Friesenberg
             </p>
           </div>
           <a
             href={SALON_CONFIG.address.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#efe8dc] hover:bg-[#e4dacb] text-xs font-semibold text-[#2e231c] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442]"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2e231c] hover:bg-[#453830] text-xs font-semibold text-[#f1e6c0] shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442]"
           >
-            <Compass className="w-3.5 h-3.5 text-[#c96442]" />
+            <Compass className="w-4 h-4 text-[#d4a24c]" />
             <span>{t.location.directions}</span>
           </a>
         </div>
 
         {/* CARD 7: 2x1 Featured Work Showcase (3 photos + link) */}
-        <div className="md:col-span-2 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] flex flex-col justify-between">
+        <div className="md:col-span-2 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] card-hover-luxury flex flex-col justify-between">
           <div className="flex items-center justify-between mb-4">
             <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#736c62]">
               {t.featuredWork.title}
@@ -302,16 +317,16 @@ export const HomePage: React.FC = () => {
               <Link
                 key={item.id}
                 to="/arbeiten"
-                className="relative aspect-square rounded-2xl overflow-hidden bg-[#2e231c] group"
+                className="relative aspect-square rounded-2xl overflow-hidden bg-[#2e231c] group shadow-xs"
               >
                 <img
                   src={item.image}
                   alt={language === 'de' ? item.titleDe : item.titleTr}
                   referrerPolicy="no-referrer"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2e231c]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-2 flex items-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2e231c]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-2.5 flex items-end">
                   <span className="text-[11px] text-[#f4efe6] font-medium truncate">
                     {language === 'de' ? item.titleDe : item.titleTr}
                   </span>
@@ -322,7 +337,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 8: 2x1 Top 3 Featured Services */}
-        <div className="md:col-span-2 rounded-3xl p-6 bg-[#2e231c] text-[#f4efe6] flex flex-col justify-between shadow-xs">
+        <div className="md:col-span-2 rounded-3xl p-6 bg-[#2e231c] text-[#f4efe6] card-hover-luxury flex flex-col justify-between shadow-md">
           <div>
             <div className="flex items-center justify-between mb-4">
               <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#d4a24c]">
@@ -340,7 +355,7 @@ export const HomePage: React.FC = () => {
               {featuredServices.map((srv) => (
                 <div
                   key={srv.id}
-                  className="flex items-center justify-between py-2 border-b border-[#45413b] last:border-0"
+                  className="flex items-center justify-between py-2 border-b border-[#45413b] last:border-0 hover:bg-[#3a2e26]/50 px-2 rounded-xl transition-colors"
                 >
                   <div>
                     <h4 className="font-serif text-sm font-semibold text-[#f4efe6]">
@@ -356,7 +371,7 @@ export const HomePage: React.FC = () => {
                     </span>
                     <Link
                       to={`/buchen?service=${srv.id}`}
-                      className="px-3 py-1 rounded-full text-xs font-medium bg-[#c96442] hover:bg-[#a94f32] text-white transition-colors"
+                      className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#c96442] hover:bg-[#a94f32] text-white shadow-xs transition-all active:scale-95"
                     >
                       Buchen
                     </Link>

@@ -27,15 +27,15 @@ export const Header: React.FC = () => {
         
         {/* Zone 1: Brand Wordmark */}
         <Link to="/" className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442]/40 rounded-lg p-1">
-          <div className="w-10 h-10 rounded-full bg-[#2e231c] flex items-center justify-center text-[#f1e6c0] font-serif text-xl font-bold shadow-xs transition-transform group-hover:scale-105">
-            R
+          <div className="w-10 h-10 rounded-full bg-[#2e231c] flex items-center justify-center text-[#f1e6c0] font-serif text-xl font-bold shadow-xs transition-transform group-hover:scale-105 border border-[#d4a24c]/40">
+            I
           </div>
           <div className="flex flex-col">
-            <span className="font-sans font-bold text-base sm:text-lg tracking-[0.2em] text-[#2e231c] uppercase leading-tight">
+            <span className="font-sans font-bold text-base sm:text-lg tracking-[0.16em] text-[#2e231c] uppercase leading-tight">
               {SALON_CONFIG.shortName}
             </span>
             <span className="text-[10px] uppercase font-typewriter tracking-[0.18em] text-[#736c62]">
-              ZÜRICH
+              ZÜRICH · 8055
             </span>
           </div>
         </Link>

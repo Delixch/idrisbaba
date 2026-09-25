@@ -19,25 +19,27 @@ export interface SalonOpeningHours {
 }
 
 export const SALON_CONFIG = {
-  name: "Revair Studio Zürich",
-  shortName: "Revair",
-  sloganDe: "Gepflegtes Haar beginnt mit Zeit für dich.",
-  sloganTr: "Bakımlı saç, kendine ayırdığın zamanla başlar.",
+  name: "Idris Hacimustafaoglu Coiffure",
+  shortName: "Idris Coiffure",
+  stylistName: "Idris Hacimustafaoglu",
+  sloganEn: "The Art of Hair, Mastered with Swiss Precision.",
+  sloganDe: "Die Kunst des Haares — gemeistert mit Schweizer Präzision.",
+  sloganTr: "İsviçre zanaatkarlığıyla saçın sanata dönüştüğü yer.",
   city: "Zürich",
   address: {
-    street: "Bahnhofstrasse 48",
-    postalCode: "8001",
+    street: "Arbenstrasse 352",
+    postalCode: "8055",
     city: "Zürich",
     country: "Schweiz",
-    googleMapsUrl: "https://maps.google.com/?q=Bahnhofstrasse+48,+8001+Z%C3%BCrich",
+    googleMapsUrl: "https://maps.google.com/?q=Arbenstrasse+352,+8055+Z%C3%BCrich",
   },
   contact: {
-    phone: "+41 44 211 48 90",
-    phoneDisplay: "+41 44 211 48 90",
+    phone: "", // Gizli tutuldu (kullanıcı talebi)
+    phoneDisplay: "", // Telefon sitede görünmeyecek
     email: "adnan.aydin@bluewin.ch",
     googleAppointmentUrl: "https://calendar.app.google/9y49yDQBuvTrT39WA",
-    instagram: "revair.zurich",
-    instagramUrl: "https://instagram.com/revair.zurich",
+    instagram: "idris.coiffure",
+    instagramUrl: "https://instagram.com",
   },
   timeZone: "Europe/Zurich",
   chairsCount: 2, // Koltuk sayısı

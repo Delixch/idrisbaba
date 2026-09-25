@@ -98,12 +98,14 @@ export const Footer: React.FC = () => {
                 {SALON_CONFIG.address.street}<br />
                 {SALON_CONFIG.address.postalCode} {SALON_CONFIG.address.city}, {SALON_CONFIG.address.country}
               </p>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#d4a24c]" />
-                <a href={`tel:${SALON_CONFIG.contact.phone}`} className="hover:text-[#f1e6c0]">
-                  {SALON_CONFIG.contact.phoneDisplay}
-                </a>
-              </div>
+              {SALON_CONFIG.contact.phoneDisplay ? (
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-[#d4a24c]" />
+                  <a href={`tel:${SALON_CONFIG.contact.phone}`} className="hover:text-[#f1e6c0]">
+                    {SALON_CONFIG.contact.phoneDisplay}
+                  </a>
+                </div>
+              ) : null}
               <div className="flex items-center gap-2 text-xs">
                 <span className="text-[#d4a24c]">✉</span>
                 <a href={`mailto:${SALON_CONFIG.contact.email}`} className="hover:text-[#f1e6c0] break-all">

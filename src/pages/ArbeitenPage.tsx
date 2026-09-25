@@ -30,13 +30,16 @@ export const ArbeitenPage: React.FC = () => {
       
       {/* Header & Category Filter */}
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <span className="text-[11px] uppercase font-typewriter tracking-[0.2em] text-[#736c62] block mb-2">
+        <span className="text-[11px] uppercase font-typewriter tracking-[0.25em] text-[#d4a24c] block mb-2 font-semibold">
           Portfolio &amp; Hair Rituals
         </span>
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#2e231c]">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2e231c]">
           {t.gallery.title}
         </h1>
-        <p className="text-sm text-[#45413b] mt-3 font-sans leading-relaxed">
+        <p className="font-editorial text-lg sm:text-xl text-[#c96442] italic mt-2">
+          "{SALON_CONFIG.sloganEn}"
+        </p>
+        <p className="text-xs sm:text-sm text-[#45413b] mt-3 font-sans leading-relaxed">
           {t.gallery.subtitle}
         </p>
 
