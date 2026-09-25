@@ -168,8 +168,8 @@ export const GALERI_CONFIG = {
       id: "quote-1",
       quoteDe: "Nourish · Restore · Shine",
       quoteTr: "Besle · Onar · Parlat",
-      authorDe: "Revair Philosophie",
-      authorTr: "Revair Felsefesi",
+      authorDe: "Idris Philosophie",
+      authorTr: "Idris Felsefesi",
     },
     {
       id: "quote-2",

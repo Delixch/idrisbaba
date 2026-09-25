@@ -16,7 +16,7 @@ export const translations = {
     nextSlot: {
       title: 'Nächster freier Termin',
       loading: 'Wird geladen...',
-      none: 'Kein freier Termin in Sicht',
+      none: 'Freie Termine live im Online-Kalender',
       bookNow: 'Jetzt direkt reservieren →',
     },
     quote1: {
@@ -164,7 +164,7 @@ export const translations = {
     nextSlot: {
       title: 'En Yakın Boş Randevu',
       loading: 'Yükleniyor...',
-      none: 'Yakında boş randevu bulunmuyor',
+      none: 'Boş saatler canlı online takvimde',
       bookNow: 'Hemen Bu Saati Seç →',
     },
     quote1: {

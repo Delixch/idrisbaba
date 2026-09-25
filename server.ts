@@ -60,7 +60,7 @@ const SMTP_HOST = process.env.SMTP_HOST;
 const SMTP_PORT = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 587;
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_PASS = process.env.SMTP_PASS;
-const SMTP_FROM = process.env.SMTP_FROM || `"${SALON_CONFIG.name}" <termin@revair-studio.ch>`;
+const SMTP_FROM = process.env.SMTP_FROM || `"${SALON_CONFIG.name}" <termin@idris-coiffure.ch>`;
 const CALENDAR_ID = process.env.CALENDAR_ID;
 const GOOGLE_SERVICE_ACCOUNT_JSON = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
 
@@ -247,7 +247,7 @@ function generateIcs(event: CalendarEventItem): string {
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Revair Studio Zürich//Hair Appointments//DE',
+    'PRODID:-//Idris Coiffure Zürich//Hair Appointments//DE',
     'CALSCALE:GREGORIAN',
     'METHOD:REQUEST',
     'BEGIN:VEVENT',
@@ -266,11 +266,11 @@ function generateIcs(event: CalendarEventItem): string {
 
 // Mail Sending Helpers
 async function sendVerificationCodeEmail(email: string, code: string, serviceName: string) {
-  const subject = `Ihr Bestätigungscode für Revair Studio`;
+  const subject = `Ihr Bestätigungscode für Idris Coiffure`;
   // Section 4.3: Kod e-postanın konu satırına yazılmaz, sadece içeriğinde bulunur!
   const textBody = `Guten Tag,
 
-Ihr 6-stelliger Bestätigungscode für Ihren Termin (${serviceName}) bei Revair Studio lautet:
+Ihr 6-stelliger Bestätigungscode für Ihren Termin (${serviceName}) bei Idris Coiffure lautet:
 
 ${code}
 
@@ -289,7 +289,7 @@ ${SALON_CONFIG.contact.phone}`;
   <div style="max-width: 520px; margin: 0 auto; background-color: #fbf8f2; border: 1px solid #e4dacb; border-radius: 16px; padding: 32px; box-shadow: 0 4px 12px rgba(46,35,28,0.05);">
     <div style="text-align: center; margin-bottom: 24px;">
       <div style="display: inline-block; width: 44px; height: 44px; border-radius: 50%; background-color: #2e231c; color: #f1e6c0; font-family: Georgia, serif; font-size: 22px; line-height: 44px; font-weight: bold;">R</div>
-      <h2 style="font-family: 'Source Serif 4', Georgia, serif; color: #2e231c; font-size: 24px; margin: 12px 0 4px;">Revair Studio Zürich</h2>
+      <h2 style="font-family: 'Source Serif 4', Georgia, serif; color: #2e231c; font-size: 24px; margin: 12px 0 4px;">Idris Coiffure Zürich</h2>
       <p style="color: #736c62; font-size: 13px; margin: 0; font-family: 'Courier Prime', Courier, monospace; letter-spacing: 0.05em;">HAIR RITUALS &amp; SPA</p>
     </div>
     <div style="border-top: 1px dashed #d3c6b3; margin: 16px 0 24px;"></div>
@@ -338,7 +338,7 @@ async function sendConfirmationEmail(event: CalendarEventItem) {
     timeZone: SALON_CONFIG.timeZone,
   });
 
-  const subject = `Ihr Termin ist bestätigt — Revair Studio Zürich`;
+  const subject = `Ihr Termin ist bestätigt — Idris Coiffure Zürich`;
   const textBody = `Guten Tag ${event.customerName},
 
 Ihr Termin bei ${SALON_CONFIG.name} ist verbindlich bestätigt:
@@ -424,7 +424,7 @@ async function sendReminderEmail(event: CalendarEventItem) {
     timeZone: SALON_CONFIG.timeZone,
   });
 
-  const subject = `Erinnerung an Ihren Termin morgen — Revair Studio Zürich`;
+  const subject = `Erinnerung an Ihren Termin morgen — Idris Coiffure Zürich`;
   const textBody = `Guten Tag ${event.customerName},
 
 wir freuen uns darauf, Sie morgen um ${timeFormatted} Uhr bei uns im Salon begrüssen zu dürfen!
@@ -435,7 +435,7 @@ Ort: ${SALON_CONFIG.address.street}, ${SALON_CONFIG.address.postalCode} ${SALON_
 Falls etwas dazwischenkommt: ${cancelUrl}
 
 Mit herzlichen Grüssen,
-Ihr Revair Team`;
+Ihr Idris Coiffure Team`;
 
   if (mailTransporter) {
     await mailTransporter.sendMail({
@@ -450,7 +450,7 @@ Ihr Revair Team`;
 }
 
 async function sendCancellationEmail(event: CalendarEventItem) {
-  const subject = `Bestätigung: Termin storniert — Revair Studio Zürich`;
+  const subject = `Bestätigung: Termin storniert — Idris Coiffure Zürich`;
   const textBody = `Guten Tag ${event.customerName},
 
 Ihr Termin für ${event.serviceName} wurde erfolgreich aus unserem Kalender gelöscht.
@@ -1209,7 +1209,7 @@ async function startServer() {
 
   if (!process.env.VERCEL) {
     app.listen(PORT, '0.0.0.0', () => {
-      console.log(`[Revair Studio Server] running on http://0.0.0.0:${PORT}`);
+      console.log(`[Idris Coiffure Server] running on http://0.0.0.0:${PORT}`);
     });
   }
 }

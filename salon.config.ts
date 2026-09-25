@@ -173,8 +173,8 @@ export const SALON_CONFIG = {
     {
       id: "revair-oil-spa",
       category: "pflege",
-      nameDe: "Revair Botanical Oil Spa",
-      nameTr: "Revair Botanik Yağ Terapisi",
+      nameDe: "Idris Botanical Oil Spa",
+      nameTr: "Idris Botanik Yağ Terapisi",
       durationMinutes: 45,
       priceChf: 70,
       descriptionDe: "Wärmendes Kopfhaut-Ritual mit kaltgepresstem Kräuteröl, Akupressur & Dampfkompresse.",

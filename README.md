@@ -1,4 +1,4 @@
-# Revair Studio Zürich — Coiffure Web & Buchungssystem
+# Idris Coiffure Zürich — Coiffure Web & Buchungssystem
 
 Professionelle Webpräsenz und Online-Terminbuchungssystem für einen Coiffure-Salon in Zürich, Schweiz.
 
@@ -37,7 +37,7 @@ Aus Sicherheitsgründen (Abschnitt 4.1 der Vorgaben) darf **niemals das Haupt-Pa
   1. Google-Konto aufrufen -> *Sicherheit*.
   2. Sicherstellen, dass *2-Faktor-Authentifizierung (2FA)* aktiv ist.
   3. Nach *App-Passwörter* suchen.
-  4. Eine neue App namens `Revair Buchungssystem` anlegen.
+  4. Eine neue App namens `Idris Buchungssystem` anlegen.
   5. Das generierte 16-stellige Passwort kopieren.
 - **Hostpoint / Infomaniak / Swisscom:**
   1. Webmail Control Panel aufrufen -> *E-Mail-Konten -> Einstellungen -> Passwörter / Externe Programme*.
@@ -56,7 +56,7 @@ SMTP_HOST="smtp.gmail.com"
 SMTP_PORT="587"
 SMTP_USER="ihre-email@gmail.com"
 SMTP_PASS="xxxx xxxx xxxx xxxx"
-SMTP_FROM="Revair Studio <termin@revair-studio.ch>"
+SMTP_FROM="Idris Coiffure <termin@idris-coiffure.ch>"
 
 # Optionaler Sicherheitsschlüssel für Token
 TOKEN_SECRET=""
