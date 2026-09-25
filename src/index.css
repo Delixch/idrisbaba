@@ -34,6 +34,35 @@
     color: var(--color-ink);
     font-family: var(--font-sans);
   }
+
+  /* Custom Luxury Obsidian & Gold Scrollbar (WebKit / Chrome / Safari / Edge) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #12100e;
+    border-left: 1px solid rgba(212, 162, 76, 0.12);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d4a24c 0%, #a8781f 50%, #d4a24c 100%);
+    border-radius: 9999px;
+    border: 2px solid #12100e;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #fbbf24 0%, #d4a24c 50%, #fbbf24 100%);
+    box-shadow: 0 0 14px rgba(251, 191, 36, 0.6);
+  }
+
+  /* Firefox Custom Scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #d4a24c #12100e;
+  }
 }
 
 /* Luxury Interactive Card Effects & Border Beam Animation */
