@@ -8,27 +8,27 @@ export const Footer: React.FC = () => {
   const { language, t } = useLanguage();
 
   return (
-    <footer className="w-full bg-[#2e231c] text-[#f4efe6] pt-16 pb-12 border-t border-[#45413b]">
+    <footer className="w-full bg-[#0d0b0a] text-[#f7f3ec] pt-16 pb-12 border-t border-[#2d2621]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#45413b]/60">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#2d2621]">
           
           {/* Col 1: Brand & Slogan */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#f1e6c0] flex items-center justify-center text-[#2e231c] font-serif text-lg font-bold">
-                R
+              <div className="w-9 h-9 rounded-full bg-[#241e19] flex items-center justify-center text-[#d4a24c] font-serif text-lg font-bold border border-[#d4a24c]/40">
+                I
               </div>
-              <span className="font-sans font-bold text-lg tracking-[0.18em] text-[#f4efe6] uppercase">
+              <span className="font-sans font-bold text-lg tracking-[0.18em] text-[#f7f3ec] uppercase">
                 {SALON_CONFIG.shortName}
               </span>
             </div>
-            <p className="text-xs text-[#a0988b] leading-relaxed font-sans">
+            <p className="text-xs text-[#9e9486] leading-relaxed font-sans">
               {t.footer.tagline}
             </p>
-            <p className="text-xs text-[#f1e6c0] font-typewriter italic">
-              "{language === 'de' ? SALON_CONFIG.sloganDe : SALON_CONFIG.sloganTr}"
+            <p className="text-xs text-[#fbbf24] font-editorial italic text-base">
+              "{SALON_CONFIG.sloganEn}"
             </p>
           </div>
 

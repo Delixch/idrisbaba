@@ -115,38 +115,38 @@ export const HomePage: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#2e231c]/90 via-[#2e231c]/30 to-transparent" />
           
           {/* Frosted Glass Floating Panel */}
-          <div className="absolute inset-x-4 bottom-4 sm:inset-x-6 sm:bottom-6 p-6 sm:p-8 rounded-2xl bg-[#fbf8f2]/90 backdrop-blur-md border border-[#fbf8f2]/80 shadow-xl">
+          <div className="absolute inset-x-4 bottom-4 sm:inset-x-6 sm:bottom-6 p-6 sm:p-8 rounded-2xl bg-[#16120f]/85 backdrop-blur-md border border-[#d4a24c]/30 shadow-2xl">
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full bg-[#d4a24c]" />
-              <span className="text-[11px] uppercase font-typewriter tracking-[0.25em] text-[#736c62]">
+              <span className="w-2 h-2 rounded-full bg-[#fbbf24] shadow-[0_0_8px_#fbbf24]" />
+              <span className="text-[11px] uppercase font-typewriter tracking-[0.25em] text-[#d4a24c] font-semibold">
                 Haute Coiffure · Zürich
               </span>
             </div>
             
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2e231c] leading-[1.12] mb-1">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f7f3ec] leading-[1.12] mb-1">
               {SALON_CONFIG.name}
             </h1>
 
             {/* Custom Luxury Font Slogan */}
-            <p className="font-editorial text-xl sm:text-2xl text-[#c96442] italic tracking-wide mb-3">
+            <p className="font-editorial text-xl sm:text-2xl text-[#fbbf24] italic tracking-wide mb-3">
               "{SALON_CONFIG.sloganEn}"
             </p>
 
-            <p className="text-xs sm:text-sm text-[#45413b] font-sans mb-6 max-w-lg leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#d4ccc0] font-sans mb-6 max-w-lg leading-relaxed">
               {language === 'de' ? SALON_CONFIG.sloganDe : SALON_CONFIG.sloganTr}
             </p>
 
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 to="/buchen"
-                className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold text-white bg-[#c96442] hover:bg-[#a94f32] rounded-full shadow-md transition-all active:scale-95"
+                className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold text-[#12100e] bg-gradient-to-r from-[#fbbf24] to-[#d4a24c] hover:from-[#f59e0b] hover:to-[#b45309] rounded-full shadow-lg transition-all active:scale-95"
               >
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-4 h-4 text-[#12100e]" />
                 {t.hero.cta}
               </Link>
               <Link
                 to="/arbeiten"
-                className="inline-flex items-center gap-2 px-5 py-3 text-xs sm:text-sm font-medium text-[#2e231c] bg-[#efe8dc] hover:bg-[#e4dacb] border border-[#d3c6b3] rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3 text-xs sm:text-sm font-medium text-[#f7f3ec] bg-[#241e19]/90 hover:bg-[#342a22] border border-[#d4a24c]/40 rounded-full transition-colors"
               >
                 {t.hero.explore}
               </Link>
@@ -157,90 +157,90 @@ export const HomePage: React.FC = () => {
         {/* CARD 2: 1x1 "Nächster freier Termin" Card (Live Calendar Check) */}
         <div
           onClick={handleNextSlotClick}
-          className="col-span-1 p-6 luxury-glow-card shimmer-hover cursor-pointer flex flex-col justify-between group overflow-hidden"
+          className="col-span-1 p-6 luxury-glow-card shimmer-hover cursor-pointer flex flex-col justify-between group overflow-hidden bg-[#16120f]"
         >
-          <div className="absolute top-0 right-0 w-24 h-24 bg-[#587a4f]/5 rounded-bl-full pointer-events-none" />
+          <div className="absolute top-0 right-0 w-24 h-24 bg-[#4ade80]/5 rounded-bl-full pointer-events-none" />
           <div className="relative z-10">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#736c62]">
+              <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#9e9486]">
                 {t.nextSlot.title}
               </span>
-              <div className="w-8 h-8 rounded-full bg-[#587a4f]/15 flex items-center justify-center text-[#587a4f] relative">
-                <span className="absolute w-3 h-3 rounded-full bg-[#587a4f] live-pulse" />
+              <div className="w-8 h-8 rounded-full bg-[#4ade80]/15 flex items-center justify-center text-[#4ade80] relative border border-[#4ade80]/30">
+                <span className="absolute w-2.5 h-2.5 rounded-full bg-[#4ade80] live-pulse" />
                 <Clock className="w-4 h-4 relative z-10" />
               </div>
             </div>
 
             {loadingNextSlot ? (
-              <p className="text-sm text-[#736c62] animate-pulse">{t.nextSlot.loading}</p>
+              <p className="text-sm text-[#9e9486] animate-pulse">{t.nextSlot.loading}</p>
             ) : nextSlot?.nextSlotIso ? (
               <div className="space-y-1">
-                <span className="text-2xl sm:text-3xl font-display font-bold text-[#2e231c] block tracking-tight">
-                  {nextSlot.timeFormatted} <span className="text-sm font-normal font-sans text-[#736c62]">Uhr</span>
+                <span className="text-2xl sm:text-3xl font-display font-bold text-[#f7f3ec] block tracking-tight">
+                  {nextSlot.timeFormatted} <span className="text-sm font-normal font-sans text-[#9e9486]">Uhr</span>
                 </span>
-                <span className="text-xs text-[#587a4f] font-semibold block flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#587a4f]" />
+                <span className="text-xs text-[#4ade80] font-semibold block flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#4ade80]" />
                   {language === 'de' ? nextSlot.dateFormattedDe : nextSlot.dateFormattedTr}
                 </span>
               </div>
             ) : (
-              <p className="text-xs text-[#736c62]">{t.nextSlot.none}</p>
+              <p className="text-xs text-[#9e9486]">{t.nextSlot.none}</p>
             )}
           </div>
 
-          <div className="pt-4 border-t border-[#e4dacb] flex items-center justify-between text-xs font-semibold text-[#c96442] group-hover:text-[#a94f32] transition-colors relative z-10">
+          <div className="pt-4 border-t border-[#2d2621] flex items-center justify-between text-xs font-semibold text-[#fbbf24] group-hover:text-[#f59e0b] transition-colors relative z-10">
             <span>{t.nextSlot.bookNow}</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1.5" />
           </div>
         </div>
 
-        {/* CARD 3: 1x1 Typewriter Butter Yellow Text Card */}
-        <div className="col-span-1 p-6 bg-[#f1e6c0] luxury-glow-card shimmer-hover flex flex-col justify-between shadow-xs">
-          <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#736c62]">
+        {/* CARD 3: 1x1 Typewriter Dark Gold Text Card */}
+        <div className="col-span-1 p-6 bg-[#1a140f] luxury-glow-card shimmer-hover flex flex-col justify-between shadow-lg">
+          <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#d4a24c]">
             Philosophy
           </span>
-          <blockquote className="font-editorial text-lg sm:text-xl text-[#211f1c] leading-snug my-2 italic">
+          <blockquote className="font-editorial text-lg sm:text-xl text-[#f7f3ec] leading-snug my-2 italic">
             "{SALON_CONFIG.sloganEn}"
           </blockquote>
-          <span className="text-[11px] font-typewriter text-[#736c62]">
+          <span className="text-[11px] font-typewriter text-[#9e9486]">
             Arbenstrasse · 8055 Zürich
           </span>
         </div>
 
         {/* CARD 4: 1x1 Cancellation Rule Note Card */}
-        <div className="col-span-1 p-6 bg-[#f5e1d5]/50 border border-dashed border-[#c96442]/40 luxury-glow-card flex flex-col justify-between">
-          <div className="flex items-center gap-2 text-[#c96442] mb-2">
+        <div className="col-span-1 p-6 bg-[#211612] border border-[#d97746]/40 luxury-glow-card flex flex-col justify-between">
+          <div className="flex items-center gap-2 text-[#d97746] mb-2">
             <ShieldAlert className="w-4 h-4 shrink-0" />
             <span className="text-xs font-semibold uppercase tracking-wider font-typewriter">
               {t.cancelRule.title}
             </span>
           </div>
-          <p className="text-sm font-semibold text-[#2e231c] leading-snug">
+          <p className="text-sm font-semibold text-[#f7f3ec] leading-snug">
             {t.cancelRule.text}
           </p>
-          <p className="text-xs text-[#736c62] mt-2 leading-relaxed">
+          <p className="text-xs text-[#d4ccc0] mt-2 leading-relaxed">
             {t.cancelRule.detail}
           </p>
         </div>
 
         {/* CARD 5: 1x1 Opening Hours Card with Live Status Badge */}
-        <div className="col-span-1 p-6 luxury-glow-card flex flex-col justify-between">
+        <div className="col-span-1 p-6 luxury-glow-card flex flex-col justify-between bg-[#16120f]">
           <div>
             <div className="flex items-center justify-between mb-3">
-              <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#736c62]">
+              <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#9e9486]">
                 {t.hours.title}
               </span>
               {/* Live Badge */}
               <span
                 className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${
                   isOpenNow
-                    ? 'bg-[#587a4f]/15 text-[#587a4f] border border-[#587a4f]/30'
-                    : 'bg-[#b0473a]/10 text-[#b0473a] border border-[#b0473a]/25'
+                    ? 'bg-[#4ade80]/15 text-[#4ade80] border border-[#4ade80]/30'
+                    : 'bg-[#ef4444]/15 text-[#f87171] border border-[#ef4444]/30'
                 }`}
               >
                 <span
                   className={`w-1.5 h-1.5 rounded-full ${
-                    isOpenNow ? 'bg-[#587a4f] animate-pulse' : 'bg-[#b0473a]'
+                    isOpenNow ? 'bg-[#4ade80] animate-pulse' : 'bg-[#ef4444]'
                   }`}
                 />
                 {isOpenNow ? t.hours.nowOpen : t.hours.closed}
@@ -253,10 +253,10 @@ export const HomePage: React.FC = () => {
                 return (
                   <div
                     key={oh.day}
-                    className={`flex justify-between py-0.5 px-1 rounded-md transition-colors ${
+                    className={`flex justify-between py-1 px-1.5 rounded-md transition-colors ${
                       isToday
-                        ? 'bg-[#f1e6c0]/70 font-semibold text-[#2e231c]'
-                        : 'text-[#45413b]'
+                        ? 'bg-[#241e19] text-[#fbbf24] font-semibold border border-[#d4a24c]/30'
+                        : 'text-[#d4ccc0]'
                     }`}
                   >
                     <span>{language === 'de' ? oh.nameDe : oh.nameTr}</span>
@@ -268,22 +268,22 @@ export const HomePage: React.FC = () => {
               })}
             </div>
           </div>
-          <div className="text-[10px] text-[#736c62] pt-2 border-t border-[#e4dacb]">
+          <div className="text-[10px] text-[#9e9486] pt-2 border-t border-[#2d2621]">
             {t.hours.lunchNote}
           </div>
         </div>
 
         {/* CARD 6: 2x1 Address & Map Navigation Card */}
-        <div className="md:col-span-2 p-6 luxury-glow-card shimmer-hover flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+        <div className="md:col-span-2 p-6 luxury-glow-card shimmer-hover flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 bg-[#16120f]">
           <div className="space-y-2 relative z-10">
-            <div className="flex items-center gap-2 text-[#736c62] text-[11px] uppercase font-typewriter tracking-widest">
-              <MapPin className="w-3.5 h-3.5 text-[#d4a24c]" />
+            <div className="flex items-center gap-2 text-[#d4a24c] text-[11px] uppercase font-typewriter tracking-widest font-semibold">
+              <MapPin className="w-3.5 h-3.5 text-[#fbbf24]" />
               <span>{t.location.title}</span>
             </div>
-            <h3 className="font-display text-2xl font-bold text-[#2e231c]">
+            <h3 className="font-display text-2xl font-bold text-[#f7f3ec]">
               {SALON_CONFIG.address.street}
             </h3>
-            <p className="text-xs text-[#736c62]">
+            <p className="text-xs text-[#9e9486]">
               {SALON_CONFIG.address.postalCode} {SALON_CONFIG.address.city} · Zürich Albisrieden / Friesenberg
             </p>
           </div>
@@ -291,22 +291,22 @@ export const HomePage: React.FC = () => {
             href={SALON_CONFIG.address.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2e231c] hover:bg-[#453830] text-xs font-semibold text-[#f1e6c0] shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442] relative z-10"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#fbbf24] to-[#d4a24c] hover:from-[#f59e0b] hover:to-[#b45309] text-xs font-bold text-[#12100e] shadow-lg transition-all focus-visible:outline-none relative z-10"
           >
-            <Compass className="w-4 h-4 text-[#d4a24c]" />
+            <Compass className="w-4 h-4 text-[#12100e]" />
             <span>{t.location.directions}</span>
           </a>
         </div>
 
         {/* CARD 7: 2x1 Featured Work Showcase (3 photos + link) */}
-        <div className="md:col-span-2 p-6 luxury-glow-card flex flex-col justify-between">
+        <div className="md:col-span-2 p-6 luxury-glow-card flex flex-col justify-between bg-[#16120f]">
           <div className="flex items-center justify-between mb-4 relative z-10">
-            <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#736c62]">
+            <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#d4a24c]">
               {t.featuredWork.title}
             </span>
             <Link
               to="/arbeiten"
-              className="text-xs font-semibold text-[#c96442] hover:text-[#a94f32] transition-colors inline-flex items-center gap-1"
+              className="text-xs font-semibold text-[#fbbf24] hover:text-[#f59e0b] transition-colors inline-flex items-center gap-1"
             >
               {t.featuredWork.allLink}
             </Link>
@@ -317,7 +317,7 @@ export const HomePage: React.FC = () => {
               <Link
                 key={item.id}
                 to="/arbeiten"
-                className="relative aspect-square rounded-2xl overflow-hidden bg-[#2e231c] group shadow-xs border border-[#e4dacb]"
+                className="relative aspect-square rounded-2xl overflow-hidden bg-[#0d0b0a] group shadow-md border border-[#2d2621]"
               >
                 <img
                   src={item.image}
@@ -326,8 +326,8 @@ export const HomePage: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2e231c]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-2.5 flex items-end">
-                  <span className="text-[11px] text-[#f4efe6] font-medium truncate">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b0a]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-2.5 flex items-end">
+                  <span className="text-[11px] text-[#f7f3ec] font-medium truncate">
                     {language === 'de' ? item.titleDe : item.titleTr}
                   </span>
                 </div>
@@ -337,7 +337,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 8: 2x1 Top 3 Featured Services */}
-        <div className="md:col-span-2 p-6 bg-[#2e231c] text-[#f4efe6] luxury-glow-card flex flex-col justify-between shadow-xl">
+        <div className="md:col-span-2 p-6 bg-[#16120f] text-[#f7f3ec] luxury-glow-card flex flex-col justify-between shadow-2xl">
           <div className="relative z-10">
             <div className="flex items-center justify-between mb-4">
               <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#d4a24c]">
@@ -345,7 +345,7 @@ export const HomePage: React.FC = () => {
               </span>
               <Link
                 to="/leistungen"
-                className="text-xs font-semibold text-[#f1e6c0] hover:text-white transition-colors"
+                className="text-xs font-semibold text-[#fbbf24] hover:text-white transition-colors"
               >
                 {t.featuredServices.allLink}
               </Link>
@@ -355,23 +355,23 @@ export const HomePage: React.FC = () => {
               {featuredServices.map((srv) => (
                 <div
                   key={srv.id}
-                  className="flex items-center justify-between py-2 border-b border-[#45413b] last:border-0 hover:bg-[#3a2e26]/50 px-2 rounded-xl transition-colors"
+                  className="flex items-center justify-between py-2 border-b border-[#2d2621] last:border-0 hover:bg-[#241e19]/60 px-2 rounded-xl transition-colors"
                 >
                   <div>
-                    <h4 className="font-serif text-sm font-semibold text-[#f4efe6]">
+                    <h4 className="font-serif text-sm font-semibold text-[#f7f3ec]">
                       {language === 'de' ? srv.nameDe : srv.nameTr}
                     </h4>
-                    <span className="text-xs text-[#a0988b]">
+                    <span className="text-xs text-[#9e9486]">
                       {srv.durationMinutes} Min
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-sm font-semibold text-[#f1e6c0]">
+                    <span className="font-mono text-sm font-semibold text-[#fbbf24]">
                       CHF {srv.priceChf}.–
                     </span>
                     <Link
                       to={`/buchen?service=${srv.id}`}
-                      className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#c96442] hover:bg-[#a94f32] text-white shadow-xs transition-all active:scale-95"
+                      className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-[#fbbf24] to-[#d4a24c] hover:from-[#f59e0b] hover:to-[#b45309] text-[#12100e] shadow-md transition-all active:scale-95"
                     >
                       Buchen
                     </Link>

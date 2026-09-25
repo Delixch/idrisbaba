@@ -55,13 +55,16 @@ export const LeistungenPage: React.FC = () => {
       
       {/* Page Title */}
       <div className="text-center max-w-2xl mx-auto mb-12">
-        <span className="text-[11px] uppercase font-typewriter tracking-[0.2em] text-[#736c62] block mb-2">
-          Preisliste · ZÜRICH
+        <span className="text-[11px] uppercase font-typewriter tracking-[0.25em] text-[#d4a24c] block mb-2 font-semibold">
+          Preise &amp; Rituale · ZÜRICH 8055
         </span>
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#2e231c]">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f7f3ec]">
           {t.services.title}
         </h1>
-        <p className="text-sm text-[#45413b] mt-3 font-sans leading-relaxed">
+        <p className="font-editorial text-xl text-[#fbbf24] italic mt-2">
+          "{SALON_CONFIG.sloganEn}"
+        </p>
+        <p className="text-xs sm:text-sm text-[#d4ccc0] mt-3 font-sans leading-relaxed">
           {t.services.subtitle}
         </p>
       </div>
@@ -79,19 +82,19 @@ export const LeistungenPage: React.FC = () => {
           return (
             <div
               key={cat.id}
-              className="p-6 sm:p-7 luxury-glow-card shimmer-hover flex flex-col justify-between"
+              className="p-6 sm:p-7 luxury-glow-card shimmer-hover flex flex-col justify-between bg-[#16120f]"
             >
               <div className="relative z-10">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-[#efe8dc] flex items-center justify-center text-[#c96442]">
+                  <div className="w-8 h-8 rounded-full bg-[#241e19] flex items-center justify-center text-[#fbbf24] border border-[#d4a24c]/40">
                     <Icon className="w-4 h-4" />
                   </div>
-                  <h3 className="font-serif text-xl font-semibold text-[#2e231c]">
+                  <h3 className="font-serif text-xl font-semibold text-[#f7f3ec]">
                     {language === 'de' ? cat.nameDe : cat.nameTr}
                   </h3>
                 </div>
-                <p className="text-xs text-[#736c62] mb-6">
+                <p className="text-xs text-[#9e9486] mb-6">
                   {language === 'de' ? cat.descDe : cat.descTr}
                 </p>
 
@@ -101,19 +104,19 @@ export const LeistungenPage: React.FC = () => {
                     <div
                       key={service.id}
                       className={`pt-3 ${
-                        idx !== 0 ? 'border-t border-dashed border-[#d3c6b3]' : ''
+                        idx !== 0 ? 'border-t border-dashed border-[#2d2621]' : ''
                       }`}
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div className="flex-1">
-                          <h4 className="font-serif text-sm font-semibold text-[#2e231c]">
+                          <h4 className="font-serif text-sm font-semibold text-[#f7f3ec]">
                             {language === 'de' ? service.nameDe : service.nameTr}
                           </h4>
-                          <p className="text-xs text-[#736c62] mt-0.5 leading-relaxed">
+                          <p className="text-xs text-[#9e9486] mt-0.5 leading-relaxed">
                             {language === 'de' ? service.descriptionDe : service.descriptionTr}
                           </p>
-                          <div className="flex items-center gap-2 mt-1.5 text-xs text-[#45413b]">
-                            <span className="font-typewriter text-[11px] text-[#736c62]">
+                          <div className="flex items-center gap-2 mt-1.5 text-xs text-[#d4ccc0]">
+                            <span className="font-typewriter text-[11px] text-[#fbbf24]">
                               {service.durationMinutes} Min.
                             </span>
                           </div>
@@ -121,14 +124,14 @@ export const LeistungenPage: React.FC = () => {
 
                         {/* Price & Book Action */}
                         <div className="text-right shrink-0">
-                          <span className="font-mono text-sm font-semibold text-[#2e231c] block">
+                          <span className="font-mono text-sm font-semibold text-[#fbbf24] block">
                             CHF {service.priceChf}.–
                           </span>
                           <Link
                             to={`/buchen?service=${service.id}`}
-                            className="inline-block mt-1 text-xs font-semibold text-[#c96442] hover:text-[#a94f32] transition-colors"
+                            className="inline-block mt-1 text-xs font-bold text-[#fbbf24] hover:text-[#f59e0b] transition-colors"
                           >
-                            {t.services.bookService}
+                            {t.services.bookService} →
                           </Link>
                         </div>
                       </div>

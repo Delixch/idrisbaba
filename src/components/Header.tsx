@@ -22,19 +22,19 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#fbf8f2]/85 backdrop-blur-md border-b border-[#e4dacb] transition-colors">
+    <header className="sticky top-0 z-40 w-full bg-[#16120f]/90 backdrop-blur-md border-b border-[#2d2621] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Zone 1: Brand Wordmark */}
-        <Link to="/" className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442]/40 rounded-lg p-1">
-          <div className="w-10 h-10 rounded-full bg-[#2e231c] flex items-center justify-center text-[#f1e6c0] font-serif text-xl font-bold shadow-xs transition-transform group-hover:scale-105 border border-[#d4a24c]/40">
+        <Link to="/" className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a24c]/40 rounded-lg p-1">
+          <div className="w-10 h-10 rounded-full bg-[#241e19] flex items-center justify-center text-[#d4a24c] font-serif text-xl font-bold shadow-md transition-transform group-hover:scale-105 border border-[#d4a24c]/60">
             I
           </div>
           <div className="flex flex-col">
-            <span className="font-sans font-bold text-base sm:text-lg tracking-[0.16em] text-[#2e231c] uppercase leading-tight">
+            <span className="font-sans font-bold text-base sm:text-lg tracking-[0.16em] text-[#f7f3ec] uppercase leading-tight">
               {SALON_CONFIG.shortName}
             </span>
-            <span className="text-[10px] uppercase font-typewriter tracking-[0.18em] text-[#736c62]">
+            <span className="text-[10px] uppercase font-typewriter tracking-[0.18em] text-[#d4a24c]">
               ZÜRICH · 8055
             </span>
           </div>
@@ -46,15 +46,15 @@ export const Header: React.FC = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm tracking-wide transition-colors relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442]/40 rounded-sm ${
+              className={`text-sm tracking-wide transition-colors relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a24c]/40 rounded-sm ${
                 isActive(link.to)
-                  ? 'text-[#2e231c] font-semibold'
-                  : 'text-[#45413b] hover:text-[#211f1c]'
+                  ? 'text-[#fbbf24] font-semibold'
+                  : 'text-[#d4ccc0] hover:text-[#fbbf24]'
               }`}
             >
               {link.label}
               {isActive(link.to) && (
-                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#c96442] rounded-full" />
+                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#fbbf24] rounded-full shadow-[0_0_8px_#fbbf24]" />
               )}
             </Link>
           ))}
@@ -64,13 +64,13 @@ export const Header: React.FC = () => {
         <div className="flex items-center gap-3 sm:gap-4">
           
           {/* Language Switcher Pill Toggle */}
-          <div className="flex items-center p-0.5 bg-[#efe8dc] rounded-full border border-[#e4dacb] text-xs font-medium">
+          <div className="flex items-center p-0.5 bg-[#241e19] rounded-full border border-[#3d342c] text-xs font-medium">
             <button
               onClick={() => setLanguage('de')}
               className={`px-2.5 py-1 rounded-full transition-all focus-visible:outline-none ${
                 language === 'de'
-                  ? 'bg-[#2e231c] text-[#f4efe6] shadow-xs'
-                  : 'text-[#736c62] hover:text-[#211f1c]'
+                  ? 'bg-[#d4a24c] text-[#12100e] font-bold shadow-xs'
+                  : 'text-[#9e9486] hover:text-[#f7f3ec]'
               }`}
               title="Deutsch"
             >

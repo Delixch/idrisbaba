@@ -33,13 +33,13 @@ export const ArbeitenPage: React.FC = () => {
         <span className="text-[11px] uppercase font-typewriter tracking-[0.25em] text-[#d4a24c] block mb-2 font-semibold">
           Portfolio &amp; Hair Rituals
         </span>
-        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2e231c]">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f7f3ec]">
           {t.gallery.title}
         </h1>
-        <p className="font-editorial text-lg sm:text-xl text-[#c96442] italic mt-2">
+        <p className="font-editorial text-lg sm:text-xl text-[#fbbf24] italic mt-2">
           "{SALON_CONFIG.sloganEn}"
         </p>
-        <p className="text-xs sm:text-sm text-[#45413b] mt-3 font-sans leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#d4ccc0] mt-3 font-sans leading-relaxed">
           {t.gallery.subtitle}
         </p>
 
@@ -49,10 +49,10 @@ export const ArbeitenPage: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442] ${
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all focus-visible:outline-none ${
                 selectedCategory === cat.id
-                  ? 'bg-[#2e231c] text-[#f4efe6] shadow-xs'
-                  : 'bg-[#fbf8f2] border border-[#e4dacb] text-[#45413b] hover:bg-[#efe8dc]'
+                  ? 'bg-gradient-to-r from-[#fbbf24] to-[#d4a24c] text-[#12100e] shadow-md shadow-amber-500/20'
+                  : 'bg-[#1a1613] border border-[#2d2621] text-[#d4ccc0] hover:border-[#d4a24c]/40 hover:text-[#fbbf24]'
               }`}
             >
               {cat.label}
@@ -124,29 +124,29 @@ export const ArbeitenPage: React.FC = () => {
 
               {/* Interspersed Typewriter Text Card every 6 items */}
               {index === 3 && (
-                <div className="col-span-1 rounded-2xl p-6 bg-[#f1e6c0] border border-[#e4dacb] flex flex-col justify-between shadow-xs">
-                  <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#736c62]">
+                <div className="col-span-1 p-6 bg-[#1a140f] luxury-glow-card flex flex-col justify-between shadow-lg">
+                  <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#d4a24c]">
                     {GALERI_CONFIG.quotes[0].authorDe}
                   </span>
-                  <p className="font-typewriter text-lg text-[#211f1c] leading-relaxed my-3 font-semibold">
+                  <p className="font-editorial text-xl text-[#f7f3ec] leading-relaxed my-3 font-semibold italic">
                     "{language === 'de' ? GALERI_CONFIG.quotes[0].quoteDe : GALERI_CONFIG.quotes[0].quoteTr}"
                   </p>
-                  <span className="text-[11px] font-typewriter text-[#736c62]">
+                  <span className="text-[11px] font-typewriter text-[#9e9486]">
                     Signature Care
                   </span>
                 </div>
               )}
 
               {index === 8 && (
-                <div className="col-span-1 md:col-span-2 rounded-2xl p-6 bg-[#efe8dc] border border-[#d3c6b3] flex flex-col justify-between shadow-xs">
-                  <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#736c62]">
+                <div className="col-span-1 md:col-span-2 p-6 bg-[#16120f] luxury-glow-card flex flex-col justify-between shadow-lg">
+                  <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#d4a24c]">
                     {GALERI_CONFIG.quotes[1].authorDe}
                   </span>
-                  <p className="font-typewriter text-base sm:text-lg text-[#2e231c] leading-relaxed my-3">
+                  <p className="font-editorial text-lg sm:text-xl text-[#f7f3ec] leading-relaxed my-3 italic">
                     "{language === 'de' ? GALERI_CONFIG.quotes[1].quoteDe : GALERI_CONFIG.quotes[1].quoteTr}"
                   </p>
-                  <span className="text-[11px] font-typewriter text-[#736c62]">
-                    Revair Atelier · Zürich
+                  <span className="text-[11px] font-typewriter text-[#9e9486]">
+                    Idris Hacimustafaoglu · Zürich
                   </span>
                 </div>
               )}
@@ -155,16 +155,16 @@ export const ArbeitenPage: React.FC = () => {
         })}
 
         {/* Ending Card: Instagram Connection */}
-        <div className="col-span-1 md:col-span-2 lg:col-span-4 rounded-3xl p-8 bg-[#2e231c] text-[#f4efe6] flex flex-col sm:flex-row items-center justify-between gap-6 mt-4">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-[#f1e6c0] flex items-center justify-center text-[#2e231c]">
+        <div className="col-span-1 md:col-span-2 lg:col-span-4 p-8 luxury-glow-card shimmer-hover flex flex-col sm:flex-row items-center justify-between gap-6 mt-4 bg-[#16120f]">
+          <div className="flex items-center gap-4 relative z-10">
+            <div className="w-12 h-12 rounded-full bg-[#241e19] flex items-center justify-center text-[#fbbf24] border border-[#fbbf24]/40 shadow-md">
               <Instagram className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-serif text-lg sm:text-xl font-semibold text-[#f4efe6]">
+              <h3 className="font-serif text-lg sm:text-xl font-semibold text-[#f7f3ec]">
                 @{SALON_CONFIG.contact.instagram}
               </h3>
-              <p className="text-xs text-[#a0988b]">
+              <p className="text-xs text-[#9e9486]">
                 {t.gallery.instagramFollow}
               </p>
             </div>
@@ -173,7 +173,7 @@ export const ArbeitenPage: React.FC = () => {
             href={SALON_CONFIG.contact.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#c96442] hover:bg-[#a94f32] text-xs font-semibold text-white transition-all shadow-xs"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#fbbf24] to-[#d4a24c] hover:from-[#f59e0b] hover:to-[#b45309] text-xs font-bold text-[#12100e] transition-all shadow-lg relative z-10"
           >
             <span>Instagram öffnen</span>
             <ArrowUpRight className="w-4 h-4" />

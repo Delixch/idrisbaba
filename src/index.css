@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #f4efe6;
-  --color-surface: #fbf8f2;
-  --color-sunken: #efe8dc;
-  --color-butter: #f1e6c0;
-  --color-honey: #d4a24c;
-  --color-espresso: #2e231c;
-  --color-line: #e4dacb;
-  --color-line-strong: #d3c6b3;
-  --color-ink: #211f1c;
-  --color-ink-2: #45413b;
-  --color-muted: #736c62;
-  --color-faint: #a0988b;
-  --color-clay: #c96442;
-  --color-clay-strong: #a94f32;
-  --color-clay-soft: #f5e1d5;
-  --color-sage: #587a4f;
-  --color-ochre: #a8781f;
-  --color-brick: #b0473a;
+  --color-canvas: #12100e;
+  --color-surface: #1c1815;
+  --color-sunken: #171412;
+  --color-butter: #d4a24c;
+  --color-honey: #e8b860;
+  --color-espresso: #0d0b0a;
+  --color-line: #2d2621;
+  --color-line-strong: #3d342c;
+  --color-ink: #f7f3ec;
+  --color-ink-2: #d4ccc0;
+  --color-muted: #9e9486;
+  --color-faint: #6e6558;
+  --color-clay: #d97746;
+  --color-clay-strong: #bf5f30;
+  --color-clay-soft: #2e1d16;
+  --color-sage: #66945a;
+  --color-ochre: #d4a24c;
+  --color-brick: #c95140;
 
   --font-serif: "Source Serif 4", Georgia, serif;
   --font-display: "Playfair Display", Georgia, serif;
@@ -55,45 +55,48 @@
 .luxury-glow-card {
   position: relative;
   border-radius: 1.5rem;
-  background-color: #fbf8f2;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #1a1613;
+  color: #f7f3ec;
+  border: 1px solid rgba(212, 162, 76, 0.18);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
   isolation: isolate;
 }
 
 .luxury-glow-card::before {
   content: "";
   position: absolute;
-  inset: -1px;
+  inset: -1.5px;
   border-radius: inherit;
-  padding: 1.5px;
+  padding: 2px;
   background: conic-gradient(
     from var(--border-angle),
-    transparent 20%,
-    rgba(212, 162, 76, 0.15) 40%,
-    rgba(212, 162, 76, 0.85) 50%,
-    rgba(201, 100, 66, 0.9) 55%,
-    rgba(212, 162, 76, 0.15) 60%,
-    transparent 80%
+    transparent 15%,
+    rgba(212, 162, 76, 0.2) 35%,
+    #fbbf24 50%,
+    #d97746 58%,
+    rgba(212, 162, 76, 0.2) 68%,
+    transparent 85%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   pointer-events: none;
-  opacity: 0.35;
-  transition: opacity 0.5s ease;
-  animation: borderRotate 6s linear infinite;
+  opacity: 0.65;
+  transition: opacity 0.4s ease;
+  animation: borderRotate 5s linear infinite;
   z-index: 1;
 }
 
 .luxury-glow-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px -12px rgba(46, 35, 28, 0.12), 0 0 25px 2px rgba(212, 162, 76, 0.18);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px 4px rgba(245, 158, 11, 0.35);
+  border-color: rgba(245, 158, 11, 0.6);
 }
 
 .luxury-glow-card:hover::before {
   opacity: 1;
-  animation: borderRotate 3.5s linear infinite;
+  animation: borderRotate 2.8s linear infinite;
 }
 
 /* Subtle Shimmer Sweep on Hover */
@@ -112,7 +115,7 @@
   background: linear-gradient(
     60deg,
     transparent 35%,
-    rgba(255, 255, 255, 0.25) 50%,
+    rgba(245, 158, 11, 0.2) 50%,
     transparent 65%
   );
   transform: translateX(-100%);
@@ -128,19 +131,21 @@
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .card-hover-luxury:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 35px -10px rgba(46, 35, 28, 0.08), 0 0 20px 1px rgba(212, 162, 76, 0.15);
-  border-color: rgba(212, 162, 76, 0.55);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.7), 0 0 25px 2px rgba(212, 162, 76, 0.3);
+  border-color: rgba(212, 162, 76, 0.7);
 }
 
 @keyframes pulseGlow {
   0%, 100% {
     opacity: 1;
     transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.7;
     transform: scale(1.2);
+    box-shadow: 0 0 14px 4px rgba(74, 222, 128, 0.9);
   }
 }
 
