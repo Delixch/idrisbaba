@@ -79,9 +79,9 @@ export const LeistungenPage: React.FC = () => {
           return (
             <div
               key={cat.id}
-              className="rounded-3xl p-6 sm:p-7 bg-[#fbf8f2] border border-[#e4dacb] hover:border-[#d3c6b3] transition-all shadow-xs flex flex-col justify-between"
+              className="p-6 sm:p-7 luxury-glow-card shimmer-hover flex flex-col justify-between"
             >
-              <div>
+              <div className="relative z-10">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 rounded-full bg-[#efe8dc] flex items-center justify-center text-[#c96442]">

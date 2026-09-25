@@ -157,16 +157,16 @@ export const HomePage: React.FC = () => {
         {/* CARD 2: 1x1 "Nächster freier Termin" Card (Live Calendar Check) */}
         <div
           onClick={handleNextSlotClick}
-          className="col-span-1 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] card-hover-luxury cursor-pointer flex flex-col justify-between group relative overflow-hidden"
+          className="col-span-1 p-6 luxury-glow-card shimmer-hover cursor-pointer flex flex-col justify-between group overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-24 h-24 bg-[#587a4f]/5 rounded-bl-full pointer-events-none" />
-          <div>
+          <div className="relative z-10">
             <div className="flex items-center justify-between mb-4">
               <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#736c62]">
                 {t.nextSlot.title}
               </span>
               <div className="w-8 h-8 rounded-full bg-[#587a4f]/15 flex items-center justify-center text-[#587a4f] relative">
-                <span className="absolute w-2.5 h-2.5 rounded-full bg-[#587a4f] live-pulse" />
+                <span className="absolute w-3 h-3 rounded-full bg-[#587a4f] live-pulse" />
                 <Clock className="w-4 h-4 relative z-10" />
               </div>
             </div>
@@ -188,14 +188,14 @@ export const HomePage: React.FC = () => {
             )}
           </div>
 
-          <div className="pt-4 border-t border-[#e4dacb] flex items-center justify-between text-xs font-semibold text-[#c96442] group-hover:text-[#a94f32] transition-colors">
+          <div className="pt-4 border-t border-[#e4dacb] flex items-center justify-between text-xs font-semibold text-[#c96442] group-hover:text-[#a94f32] transition-colors relative z-10">
             <span>{t.nextSlot.bookNow}</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1.5" />
           </div>
         </div>
 
         {/* CARD 3: 1x1 Typewriter Butter Yellow Text Card */}
-        <div className="col-span-1 rounded-3xl p-6 bg-[#f1e6c0] border border-[#e4dacb] card-hover-luxury flex flex-col justify-between shadow-xs">
+        <div className="col-span-1 p-6 bg-[#f1e6c0] luxury-glow-card shimmer-hover flex flex-col justify-between shadow-xs">
           <span className="text-[10px] uppercase font-typewriter tracking-[0.2em] text-[#736c62]">
             Philosophy
           </span>
@@ -208,7 +208,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 4: 1x1 Cancellation Rule Note Card */}
-        <div className="col-span-1 rounded-3xl p-6 bg-[#f5e1d5]/50 border border-dashed border-[#c96442]/40 card-hover-luxury flex flex-col justify-between">
+        <div className="col-span-1 p-6 bg-[#f5e1d5]/50 border border-dashed border-[#c96442]/40 luxury-glow-card flex flex-col justify-between">
           <div className="flex items-center gap-2 text-[#c96442] mb-2">
             <ShieldAlert className="w-4 h-4 shrink-0" />
             <span className="text-xs font-semibold uppercase tracking-wider font-typewriter">
@@ -224,7 +224,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 5: 1x1 Opening Hours Card with Live Status Badge */}
-        <div className="col-span-1 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] card-hover-luxury flex flex-col justify-between">
+        <div className="col-span-1 p-6 luxury-glow-card flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-3">
               <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#736c62]">
@@ -274,8 +274,8 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 6: 2x1 Address & Map Navigation Card */}
-        <div className="md:col-span-2 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] card-hover-luxury flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-          <div className="space-y-2">
+        <div className="md:col-span-2 p-6 luxury-glow-card shimmer-hover flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+          <div className="space-y-2 relative z-10">
             <div className="flex items-center gap-2 text-[#736c62] text-[11px] uppercase font-typewriter tracking-widest">
               <MapPin className="w-3.5 h-3.5 text-[#d4a24c]" />
               <span>{t.location.title}</span>
@@ -291,7 +291,7 @@ export const HomePage: React.FC = () => {
             href={SALON_CONFIG.address.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2e231c] hover:bg-[#453830] text-xs font-semibold text-[#f1e6c0] shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442]"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2e231c] hover:bg-[#453830] text-xs font-semibold text-[#f1e6c0] shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c96442] relative z-10"
           >
             <Compass className="w-4 h-4 text-[#d4a24c]" />
             <span>{t.location.directions}</span>
@@ -299,8 +299,8 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 7: 2x1 Featured Work Showcase (3 photos + link) */}
-        <div className="md:col-span-2 rounded-3xl p-6 bg-[#fbf8f2] border border-[#e4dacb] card-hover-luxury flex flex-col justify-between">
-          <div className="flex items-center justify-between mb-4">
+        <div className="md:col-span-2 p-6 luxury-glow-card flex flex-col justify-between">
+          <div className="flex items-center justify-between mb-4 relative z-10">
             <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#736c62]">
               {t.featuredWork.title}
             </span>
@@ -312,12 +312,12 @@ export const HomePage: React.FC = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-3 relative z-10">
             {featuredPhotos.map((item) => (
               <Link
                 key={item.id}
                 to="/arbeiten"
-                className="relative aspect-square rounded-2xl overflow-hidden bg-[#2e231c] group shadow-xs"
+                className="relative aspect-square rounded-2xl overflow-hidden bg-[#2e231c] group shadow-xs border border-[#e4dacb]"
               >
                 <img
                   src={item.image}
@@ -337,8 +337,8 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* CARD 8: 2x1 Top 3 Featured Services */}
-        <div className="md:col-span-2 rounded-3xl p-6 bg-[#2e231c] text-[#f4efe6] card-hover-luxury flex flex-col justify-between shadow-md">
-          <div>
+        <div className="md:col-span-2 p-6 bg-[#2e231c] text-[#f4efe6] luxury-glow-card flex flex-col justify-between shadow-xl">
+          <div className="relative z-10">
             <div className="flex items-center justify-between mb-4">
               <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#d4a24c]">
                 {t.featuredServices.title}
